@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnableResizeUnstable", "EnableResizeUnstable\EnableResizeUnstable.csproj", "{6E835981-EEB7-4E65-B7C0-9F71AE92E4FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E835981-EEB7-4E65-B7C0-9F71AE92E4FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E835981-EEB7-4E65-B7C0-9F71AE92E4FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E835981-EEB7-4E65-B7C0-9F71AE92E4FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E835981-EEB7-4E65-B7C0-9F71AE92E4FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5095A426-08AB-4312-8094-AC0D44873016}
+	EndGlobalSection
+EndGlobal
