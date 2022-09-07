@@ -1,4 +1,5 @@
-﻿using BepInEx.Configuration;
+﻿using BepInEx;
+using BepInEx.Configuration;
 using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
@@ -6,14 +7,14 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace BepInEx
+namespace EnableResizeUnstable
 {
-    [BepInPlugin(GUID, PluginName, Version)]
+    [BepInPlugin(GUID, PluginName, PluginVersion)]
     public class EnableResizeUnstable : BaseUnityPlugin
     {
-        public const string GUID = "SpockBauru.EnableResize.Modified";
-        public const string PluginName = "Enable Resize Modified";
-        public const string Version = "0.5";
+        public const string GUID = "SpockBauru.EnableResize.Unstable";
+        public const string PluginName = "Enable Resize Unstable";
+        public const string PluginVersion = "0.5";
         public delegate bool EnumWindowsProc(IntPtr hWnd, IntPtr lParam);
 
         private static bool _ConfigEnableResize;
@@ -79,7 +80,7 @@ namespace BepInEx
             var fs = Screen.fullScreen;
             res = Screen.width + Screen.height;
 
-            if (!fs && prevFS || res != prevRes)
+            if (!fs && prevFS || !fs && (res != prevRes))
             {
                 ResizeWindow();
             }
@@ -98,7 +99,7 @@ namespace BepInEx
 
         void OnDisable()
         {
-            SceneManager.sceneLoaded += (s, lsm) => ResizeWindow();
+            SceneManager.sceneLoaded -= (s, lsm) => ResizeWindow();
         }
     }
 }
