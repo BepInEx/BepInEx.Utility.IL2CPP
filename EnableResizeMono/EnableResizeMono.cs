@@ -7,13 +7,13 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace EnableResizeUnstable
+namespace EnableResizeMono
 {
     [BepInPlugin(GUID, PluginName, PluginVersion)]
-    public class EnableResizeUnstable : BaseUnityPlugin
+    public class EnableResizeMono : BaseUnityPlugin
     {
-        public const string GUID = "SpockBauru.EnableResize.Unstable";
-        public const string PluginName = "Enable Resize Unstable";
+        public const string GUID = "SpockBauru.EnableResize.Mono";
+        public const string PluginName = "Enable Resize Mono";
         public const string PluginVersion = "0.5";
         public delegate bool EnumWindowsProc(IntPtr hWnd, IntPtr lParam);
 
@@ -44,7 +44,6 @@ namespace EnableResizeUnstable
         private bool prevFS = false;
         private int res;
         private int prevRes;
-
 
         internal void Awake()
         {
