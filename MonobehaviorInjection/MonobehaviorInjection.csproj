@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6E835981-EEB7-4E65-B7C0-9F71AE92E4FB}</ProjectGuid>
+    <ProjectGuid>{13FCF3E2-BA16-4D03-942F-863A714731D0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EnableResizeMono</RootNamespace>
-    <AssemblyName>EnableResizeMono</AssemblyName>
+    <RootNamespace>MonobehaviorInjection</RootNamespace>
+    <AssemblyName>MonobehaviorInjection</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -39,18 +39,27 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-	<Reference Include="BepInEx">
-      <HintPath>..\MonoLibs\BepInEx.dll</HintPath>
+    <Reference Include="BepInEx.Core">
+      <HintPath>..\IL2CPP_netFramework\BepInEx.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx.IL2CPP">
+      <HintPath>..\IL2CPP_netFramework\BepInEx.IL2CPP.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>..\IL2CPP_netFramework\Il2Cppmscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="UnhollowerBaseLib">
+      <HintPath>..\IL2CPP_netFramework\UnhollowerBaseLib.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>..\MonoLibs\UnityEngine.dll</HintPath>
+      <HintPath>..\IL2CPP_netFramework\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\MonoLibs\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>..\IL2CPP_netFramework\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EnableResizeMono.cs" />
+    <Compile Include="MonobehaviorInjection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

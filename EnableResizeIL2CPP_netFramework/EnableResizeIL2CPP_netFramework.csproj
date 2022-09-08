@@ -39,7 +39,24 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="..\IL2CPP_Libs\*.dll" Private="false" />
+    <Reference Include="BepInEx.Core">
+      <HintPath>..\IL2CPP_netFramework\BepInEx.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx.IL2CPP">
+      <HintPath>..\IL2CPP_netFramework\BepInEx.IL2CPP.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>..\IL2CPP_netFramework\Il2Cppmscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="UnhollowerBaseLib">
+      <HintPath>..\IL2CPP_netFramework\UnhollowerBaseLib.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\IL2CPP_netFramework\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\IL2CPP_netFramework\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EnableResizeIL2CPP_netFramework.cs" />

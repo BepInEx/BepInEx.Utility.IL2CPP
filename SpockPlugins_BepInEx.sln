@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnableResizeMono", "EnableR
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnableResizeIL2CPP_netFramework", "EnableResizeIL2CPP_netFramework\EnableResizeIL2CPP_netFramework.csproj", "{9921DE3B-DEF2-4470-BD8F-23F207128844}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonobehaviorInjection", "MonobehaviorInjection\MonobehaviorInjection.csproj", "{13FCF3E2-BA16-4D03-942F-863A714731D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9921DE3B-DEF2-4470-BD8F-23F207128844}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9921DE3B-DEF2-4470-BD8F-23F207128844}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9921DE3B-DEF2-4470-BD8F-23F207128844}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13FCF3E2-BA16-4D03-942F-863A714731D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13FCF3E2-BA16-4D03-942F-863A714731D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13FCF3E2-BA16-4D03-942F-863A714731D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13FCF3E2-BA16-4D03-942F-863A714731D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
