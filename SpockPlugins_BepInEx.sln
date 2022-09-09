@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnableResizeIL2CPP_netFrame
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonobehaviorInjection", "MonobehaviorInjection\MonobehaviorInjection.csproj", "{13FCF3E2-BA16-4D03-942F-863A714731D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnableFullScreenToggleIL2CPP_netFm", "EnableFullScreenToggleIL2CPP_netFm\EnableFullScreenToggleIL2CPP_netFm.csproj", "{F37EF379-2D98-469F-8CBF-EC995F54D7DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{13FCF3E2-BA16-4D03-942F-863A714731D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13FCF3E2-BA16-4D03-942F-863A714731D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13FCF3E2-BA16-4D03-942F-863A714731D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F37EF379-2D98-469F-8CBF-EC995F54D7DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F37EF379-2D98-469F-8CBF-EC995F54D7DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F37EF379-2D98-469F-8CBF-EC995F54D7DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F37EF379-2D98-469F-8CBF-EC995F54D7DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
