@@ -4,15 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6E835981-EEB7-4E65-B7C0-9F71AE92E4FB}</ProjectGuid>
+    <ProjectGuid>{2C2AE482-10AB-42D8-91BF-E7EC2213F5CF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EnableResizeMono</RootNamespace>
-    <AssemblyName>EnableResizeMono</AssemblyName>
+    <RootNamespace>CoroutineTest</RootNamespace>
+    <AssemblyName>CoroutineTest</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,7 +21,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -31,7 +29,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -40,23 +37,11 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="BepInEx">
-      <HintPath>..\MonoLibs\BepInEx.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine">
-      <HintPath>..\MonoLibs\UnityEngine.dll</HintPath>
-    </Reference>
+    <Reference Include="..\MonoLibs\*.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EnableResizeMono.cs" />
+    <Compile Include="CoroutineTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>xcopy "$(TargetPath)" "$(SolutionDir)Releases\$(ProjectName)\BepInEx\Plugins\" /s /i /y
-powershell Compress-Archive -Path '$(SolutionDir)Releases\$(ProjectName)\BepInEx\' -DestinationPath '$(SolutionDir)Releases\$(ProjectName).zip' -Force
-RD /S /Q "$(SolutionDir)Releases\$(ProjectName)\"
-
-</PostBuildEvent>
-  </PropertyGroup>
 </Project>

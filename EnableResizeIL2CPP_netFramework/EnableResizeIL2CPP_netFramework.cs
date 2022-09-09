@@ -20,13 +20,11 @@ namespace EnableResizeIL2CPP_netFramework
         public const string PluginVersion = "1.0";
 
         public static ConfigEntry<bool> ConfigEnableResize { get; private set; }
-        private static bool _ConfigEnableResize;
 
         public override void Load()
         {
             ConfigEnableResize = Config.Bind("Config", "Enable Resize", true, "Whether to allow the game window to be resized. Requires game restart to take effect.");
-            _ConfigEnableResize = ConfigEnableResize.Value;
-            if (!_ConfigEnableResize) return;
+            if (!ConfigEnableResize.Value) return;
 
             //IL2CPP don't automatically inherits Monobehavior, so needs to add separatelly
             ClassInjector.RegisterTypeInIl2Cpp<EnableResizeComponent>();
@@ -102,6 +100,7 @@ namespace EnableResizeIL2CPP_netFramework
             if (WindowHandle == IntPtr.Zero) return;
 
             StartCoroutine(TestScreen().WrapToIl2Cpp());
+            EnableResizeIL2CPP_netFramework.ConfigEnableResize.SettingChanged += (sender, args) => StartCoroutine(TestScreen().WrapToIl2Cpp());
         }
 
         private IEnumerator TestScreen()

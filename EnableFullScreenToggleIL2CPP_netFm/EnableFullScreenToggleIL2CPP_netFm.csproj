@@ -49,6 +49,8 @@
   <PropertyGroup>
     <PostBuildEvent>xcopy "$(TargetPath)" "$(SolutionDir)Releases\$(ProjectName)\BepInEx\Plugins\" /s /i /y
 powershell Compress-Archive -Path '$(SolutionDir)Releases\$(ProjectName)\BepInEx\' -DestinationPath '$(SolutionDir)Releases\$(ProjectName).zip' -Force
-RD /S /Q "$(SolutionDir)Releases\$(ProjectName)\"</PostBuildEvent>
+RD /S /Q "$(SolutionDir)Releases\$(ProjectName)\"
+
+</PostBuildEvent>
   </PropertyGroup>
 </Project>
