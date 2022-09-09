@@ -1,11 +1,11 @@
 ﻿using BepInEx;
 using BepInEx.Configuration;
 using System;
+using System.Collections;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Text;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace EnableResizeMono
 {
@@ -14,7 +14,8 @@ namespace EnableResizeMono
     {
         public const string GUID = "SpockBauru.EnableResize.Mono";
         public const string PluginName = "Enable Resize Mono";
-        public const string PluginVersion = "0.5";
+        public const string PluginVersion = "1.0";
+
         public delegate bool EnumWindowsProc(IntPtr hWnd, IntPtr lParam);
 
         private static bool _ConfigEnableResize;
@@ -35,17 +36,30 @@ namespace EnableResizeMono
         [DllImport("user32.dll")]
         public static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
 
+        // Almost the same: https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getwindowlongptra
         private const int GWL_STYLE = -16;
-        private const int WS_THICKFRAME = 0x40000;
+
+        // https://docs.microsoft.com/en-us/windows/win32/winmsg/window-styles
+        private const int WS_CAPTION = 0XC00000;
         private const int WS_MAXIMIZEBOX = 0x10000;
-        private const string GET_CLASS_NAME_MAGIC = "UnityWndClass";
+        private const int WS_MINIMIZEBOX = 0x20000;
+        private const int WS_SYSMENU = 0x80000;
+        private const int WS_THICKFRAME = 0x40000;
 
+        private const string GET_CLASS_NAME_MAGIC = "UnityWndClass"; //How Anon got this???
         private IntPtr WindowHandle = IntPtr.Zero;
-        private bool prevFS = false;
-        private int res;
-        private int prevRes;
 
-        internal void Awake()
+        private int style = 0;
+        private bool fs = false;
+        private bool prevFS = true;
+        private int res = 0;
+        private int prevRes = 1;
+        private int borderless = 1;
+        private int prevBorderless = 0;
+        private int borderlessMask = WS_CAPTION | WS_MAXIMIZEBOX | WS_MINIMIZEBOX | WS_SYSMENU | WS_THICKFRAME;
+        private WaitForSecondsRealtime oneSecond = new WaitForSecondsRealtime(1f);
+
+        public void Awake()
         {
             ConfigEnableResize = Config.Bind("Config", "Enable Resize", true, "Whether to allow the game window to be resized. Requires game restart to take effect.");
             _ConfigEnableResize = ConfigEnableResize.Value;
@@ -66,39 +80,43 @@ namespace EnableResizeMono
 
             if (WindowHandle == IntPtr.Zero) return;
 
-            SceneManager.sceneLoaded += (s, slm) => ResizeWindow();
-
-            res = Screen.width + Screen.height;
-            prevRes = res;
-            InvokeRepeating("TestScreen", 1, 1);
+            StartCoroutine(TestScreen());
         }
 
-        private void TestScreen()
-         {
-            if (!ConfigEnableResize.Value) return;
-            var fs = Screen.fullScreen;
-            res = Screen.width + Screen.height;
-
-            if (!fs && prevFS || !fs && (res != prevRes))
+         public IEnumerator TestScreen()
+        {
+            while (true)
             {
-                ResizeWindow();
-            }
+                if (!ConfigEnableResize.Value) yield break;
 
-            prevFS = fs;
-            prevRes = res;
+                fs = Screen.fullScreen;
+                res = Screen.width + Screen.height;
+                style = GetWindowLong(WindowHandle, GWL_STYLE);
+
+                // If zero, is in borderless mode
+                borderless = style & borderlessMask;
+
+                if (!fs && prevFS ||
+                    res != prevRes ||
+                    borderless != 0 && prevBorderless == 0)
+                {
+                    ResizeWindow();
+                }
+
+                prevBorderless = borderless;
+                prevFS = fs;
+                prevRes = res;
+                yield return oneSecond;
+            }
         }
 
         private void ResizeWindow()
         {
-            if (Screen.fullScreen) return;
-            var style = GetWindowLong(WindowHandle, GWL_STYLE);
+            if (fs) return;
+            if (borderless == 0) return;
+            style = GetWindowLong(WindowHandle, GWL_STYLE);
             style |= WS_THICKFRAME | WS_MAXIMIZEBOX;
             SetWindowLong(WindowHandle, GWL_STYLE, style);
-        }
-
-        void OnDisable()
-        {
-            SceneManager.sceneLoaded -= (s, lsm) => ResizeWindow();
         }
     }
 }
