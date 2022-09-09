@@ -84,7 +84,7 @@ namespace EnableResizeIL2CPP_netFramework
         private int borderlessMask = WS_CAPTION | WS_MAXIMIZEBOX | WS_MINIMIZEBOX | WS_SYSMENU | WS_THICKFRAME;
         private WaitForSecondsRealtime oneSecond = new WaitForSecondsRealtime(1f);
 
-        public void Awake()
+        internal void Awake()
         {
             var pid = Process.GetCurrentProcess().Id;
             EnumWindows((w, param) =>
@@ -104,7 +104,7 @@ namespace EnableResizeIL2CPP_netFramework
             StartCoroutine(TestScreen().WrapToIl2Cpp());
         }
 
-        public IEnumerator TestScreen()
+        private IEnumerator TestScreen()
         {
             while (true)
             {
