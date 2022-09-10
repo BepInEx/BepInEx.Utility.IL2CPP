@@ -398,4 +398,4 @@ FodyWeavers.xsd
 *.sln.iml
 
 MonoLibs/
-IL2CPP_netFramework/
+IL2CPP_netFm/

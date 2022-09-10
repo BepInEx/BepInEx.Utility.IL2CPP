@@ -8,6 +8,7 @@ using UnityEngine;
 namespace MonobehaviorInjection
 {
     [BepInPlugin(nameof(MonobehaviorInjection), nameof(MonobehaviorInjection), Version)]
+    [BepInDependency("com.bepinex.plugin.important")]
     public class MonobehaviorInjection : BasePlugin
     {
         public const string Version = "0.5";

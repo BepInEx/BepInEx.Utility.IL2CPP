@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnableFullScreenToggleIL2CP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoroutineTest", "CoroutineTest\CoroutineTest.csproj", "{2C2AE482-10AB-42D8-91BF-E7EC2213F5CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageCenterIL2CPP", "MessageCenterIL2CPP\MessageCenterIL2CPP.csproj", "{31FB817C-89A3-421F-8508-F20803B556E6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{2C2AE482-10AB-42D8-91BF-E7EC2213F5CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C2AE482-10AB-42D8-91BF-E7EC2213F5CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C2AE482-10AB-42D8-91BF-E7EC2213F5CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31FB817C-89A3-421F-8508-F20803B556E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31FB817C-89A3-421F-8508-F20803B556E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31FB817C-89A3-421F-8508-F20803B556E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31FB817C-89A3-421F-8508-F20803B556E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

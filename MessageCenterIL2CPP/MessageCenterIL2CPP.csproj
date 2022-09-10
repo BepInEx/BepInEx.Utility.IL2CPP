@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9921DE3B-DEF2-4470-BD8F-23F207128844}</ProjectGuid>
+    <ProjectGuid>{31FB817C-89A3-421F-8508-F20803B556E6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EnableResizeIL2CPP_netFramework</RootNamespace>
-    <AssemblyName>EnableResizeIL2CPP_netFramework</AssemblyName>
+    <RootNamespace>MessageCenterIL2CPP</RootNamespace>
+    <AssemblyName>MessageCenterIL2CPP</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -31,6 +31,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BepInEx.Core">
+      <HintPath>..\IL2CPP_netFm\BepInEx.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx.IL2CPP">
+      <HintPath>..\IL2CPP_netFm\BepInEx.IL2CPP.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>..\IL2CPP_netFm\Il2Cppmscorlib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -39,17 +48,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="BepInEx.Core">
-      <HintPath>..\IL2CPP_netFm\BepInEx.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="BepInEx.IL2CPP">
-      <HintPath>..\IL2CPP_netFm\BepInEx.IL2CPP.dll</HintPath>
-    </Reference>
     <Reference Include="UnhollowerBaseLib">
       <HintPath>..\IL2CPP_netFm\UnhollowerBaseLib.dll</HintPath>
-    </Reference>
-    <Reference Include="Il2Cppmscorlib">
-      <HintPath>..\IL2CPP_netFm\Il2Cppmscorlib.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
       <HintPath>..\IL2CPP_netFm\UnityEngine.dll</HintPath>
@@ -57,17 +57,22 @@
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>..\IL2CPP_netFm\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\IL2CPP_netFm\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\IL2CPP_netFm\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EnableResizeIL2CPP_netFramework.cs" />
+    <Compile Include="ShadowAndOutline.cs" />
+    <Compile Include="MessageCenter.LogEntry.cs" />
+    <Compile Include="MessageLogListener.cs" />
+    <Compile Include="MessageCenterIL2CPP.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(TargetPath)" "$(SolutionDir)Releases\$(ProjectName)\BepInEx\Plugins\" /s /i /y
-powershell Compress-Archive -Path '$(SolutionDir)Releases\$(ProjectName)\BepInEx\' -DestinationPath '$(SolutionDir)Releases\$(ProjectName).zip' -Force
-RD /S /Q "$(SolutionDir)Releases\$(ProjectName)\"
-
-</PostBuildEvent>
+    <PostBuildEvent>xcopy "$(TargetPath)" "D:\RG\BepInEx\plugins\" /s /i /y</PostBuildEvent>
   </PropertyGroup>
 </Project>
