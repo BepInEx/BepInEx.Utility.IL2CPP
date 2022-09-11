@@ -19,7 +19,7 @@ Use the Logger of your plugin and call its LogMessage method or Log method and p
 
 Please avoid abusing the messages! Only show short and clear messages that the user is likely to understand and find useful. Avoid showing many messages in a short succession.
 
-#### New Feature: Black List
+### New Feature: Black List
 Suppress console messages containing certain words. Available in Configuration Manager.
 
 ## Enable Resize
