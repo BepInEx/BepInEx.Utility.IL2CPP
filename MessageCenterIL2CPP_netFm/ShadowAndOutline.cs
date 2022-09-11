@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace MessageCenterIL2CPP
+namespace MessageCenterIL2CPP_netFm
 {
     /// <summary>
     /// Utilities for drawing IMGUI elements like labels with outlines around them.

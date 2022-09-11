@@ -10,14 +10,17 @@ using System.Text;
 using UnhollowerRuntimeLib;
 using UnityEngine;
 
-namespace EnableResizeIL2CPP_netFramework
+namespace EnableResizeIL2CPP_netFm
 {
     [BepInPlugin(GUID, PluginName, PluginVersion)]
-    public class EnableResizeIL2CPP_netFramework : BasePlugin
+    public class EnableResizeIL2CPP_netFm : BasePlugin
     {
-        public const string GUID = "SpockBauru.EnableResize.IL2CPP_netFramework";
-        public const string PluginName = "Enable Resize IL2CPP_netFramework";
+        public const string GUID = "SpockBauru.EnableResizeIL2CPP_netFm";
+        public const string PluginName = "Enable Resize";
         public const string PluginVersion = "1.0";
+
+        //Game Object shared between all SpockPlugins_BepInEx plugins
+        public GameObject SpockPlugins_BepInEx;
 
         public static ConfigEntry<bool> ConfigEnableResize { get; private set; }
 
@@ -28,10 +31,16 @@ namespace EnableResizeIL2CPP_netFramework
 
             //IL2CPP don't automatically inherits Monobehavior, so needs to add separatelly
             ClassInjector.RegisterTypeInIl2Cpp<EnableResizeComponent>();
-            GameObject EnableResize = new GameObject("EnableResize_IL2CPP");
-            GameObject.DontDestroyOnLoad(EnableResize);
-            EnableResize.hideFlags = HideFlags.HideAndDontSave;
-            EnableResize.AddComponent<EnableResizeComponent>();
+
+            SpockPlugins_BepInEx = GameObject.Find("SpockPlugins_BepInEx");
+            if (SpockPlugins_BepInEx == null)
+            {
+                SpockPlugins_BepInEx = new GameObject("SpockPlugins_BepInEx");
+                GameObject.DontDestroyOnLoad(SpockPlugins_BepInEx);
+                SpockPlugins_BepInEx.hideFlags = HideFlags.HideAndDontSave;
+                SpockPlugins_BepInEx.AddComponent<EnableResizeComponent>();
+            }
+            else SpockPlugins_BepInEx.AddComponent<EnableResizeComponent>();
         }
     }
 
@@ -100,14 +109,14 @@ namespace EnableResizeIL2CPP_netFramework
             if (WindowHandle == IntPtr.Zero) return;
 
             StartCoroutine(TestScreen().WrapToIl2Cpp());
-            EnableResizeIL2CPP_netFramework.ConfigEnableResize.SettingChanged += (sender, args) => StartCoroutine(TestScreen().WrapToIl2Cpp());
+            EnableResizeIL2CPP_netFm.ConfigEnableResize.SettingChanged += (sender, args) => StartCoroutine(TestScreen().WrapToIl2Cpp());
         }
 
         private IEnumerator TestScreen()
         {
             while (true)
             {
-                if (!EnableResizeIL2CPP_netFramework.ConfigEnableResize.Value) yield break;
+                if (!EnableResizeIL2CPP_netFm.ConfigEnableResize.Value) yield break;
 
                 fs = Screen.fullScreen;
                 res = Screen.width + Screen.height;

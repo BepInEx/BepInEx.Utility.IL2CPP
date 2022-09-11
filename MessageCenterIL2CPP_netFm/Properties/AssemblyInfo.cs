@@ -1,5 +1,5 @@
 ﻿using System.Reflection;
-using static EnableResizeMono.EnableResizeMono;
+using static MessageCenterIL2CPP_netFm.MessageCenterIL2CPP_netFm;
 
 [assembly: AssemblyTitle(GUID)]
 [assembly: AssemblyDescription(PluginName)]

@@ -5,15 +5,11 @@ VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnableResizeMono", "EnableResizeMono\EnableResizeMono.csproj", "{6E835981-EEB7-4E65-B7C0-9F71AE92E4FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnableResizeIL2CPP_netFramework", "EnableResizeIL2CPP_netFramework\EnableResizeIL2CPP_netFramework.csproj", "{9921DE3B-DEF2-4470-BD8F-23F207128844}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonobehaviorInjection", "MonobehaviorInjection\MonobehaviorInjection.csproj", "{13FCF3E2-BA16-4D03-942F-863A714731D0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnableResizeIL2CPP_netFm", "EnableResizeIL2CPP_netFm\EnableResizeIL2CPP_netFm.csproj", "{9921DE3B-DEF2-4470-BD8F-23F207128844}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnableFullScreenToggleIL2CPP_netFm", "EnableFullScreenToggleIL2CPP_netFm\EnableFullScreenToggleIL2CPP_netFm.csproj", "{F37EF379-2D98-469F-8CBF-EC995F54D7DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoroutineTest", "CoroutineTest\CoroutineTest.csproj", "{2C2AE482-10AB-42D8-91BF-E7EC2213F5CF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageCenterIL2CPP", "MessageCenterIL2CPP\MessageCenterIL2CPP.csproj", "{31FB817C-89A3-421F-8508-F20803B556E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageCenterIL2CPP_netFm", "MessageCenterIL2CPP_netFm\MessageCenterIL2CPP_netFm.csproj", "{31FB817C-89A3-421F-8508-F20803B556E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,18 +25,10 @@ Global
 		{9921DE3B-DEF2-4470-BD8F-23F207128844}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9921DE3B-DEF2-4470-BD8F-23F207128844}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9921DE3B-DEF2-4470-BD8F-23F207128844}.Release|Any CPU.Build.0 = Release|Any CPU
-		{13FCF3E2-BA16-4D03-942F-863A714731D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{13FCF3E2-BA16-4D03-942F-863A714731D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{13FCF3E2-BA16-4D03-942F-863A714731D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{13FCF3E2-BA16-4D03-942F-863A714731D0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F37EF379-2D98-469F-8CBF-EC995F54D7DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F37EF379-2D98-469F-8CBF-EC995F54D7DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F37EF379-2D98-469F-8CBF-EC995F54D7DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F37EF379-2D98-469F-8CBF-EC995F54D7DF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2C2AE482-10AB-42D8-91BF-E7EC2213F5CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2C2AE482-10AB-42D8-91BF-E7EC2213F5CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2C2AE482-10AB-42D8-91BF-E7EC2213F5CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2C2AE482-10AB-42D8-91BF-E7EC2213F5CF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{31FB817C-89A3-421F-8508-F20803B556E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{31FB817C-89A3-421F-8508-F20803B556E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31FB817C-89A3-421F-8508-F20803B556E6}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -1,6 +1,6 @@
-﻿namespace MessageCenterIL2CPP
+﻿namespace MessageCenterIL2CPP_netFm
 {
-    public partial class MessageCenter
+    public partial class MessageCenterComponent
     {
         private sealed class LogEntry
         {
