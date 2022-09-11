@@ -17,7 +17,7 @@ namespace EnableResizeIL2CPP_netFm
     {
         public const string GUID = "SpockBauru.EnableResizeIL2CPP_netFm";
         public const string PluginName = "Enable Resize";
-        public const string PluginVersion = "1.0";
+        public const string PluginVersion = "0.1";
 
         //Game Object shared between all SpockPlugins_BepInEx plugins
         public GameObject SpockPlugins_BepInEx;

@@ -16,7 +16,7 @@ namespace MessageCenterIL2CPP_netFm
     {
         public const string GUID = "SpockBauru.MessageCenterIL2CPP_netFm";
         public const string PluginName = "Message Center";
-        public const string PluginVersion = "0.5";
+        public const string PluginVersion = "0.1";
 
         //Game Object shared between all SpockPlugins_BepInEx plugins
         public GameObject SpockPlugins_BepInEx;
@@ -29,7 +29,7 @@ namespace MessageCenterIL2CPP_netFm
         public override void Load()
         {
             Enabled = Config.Bind("General", "Show messages in UI", true, "Allow plugins to show on screen messages");
-            BlackList = Config.Bind("General", "Black List", "BepInEx Unity", "Don't show console messages containing words from this list.");
+            BlackList = Config.Bind("General", "Black List", "BepInEx Unity", "Console messages containing these words will not be displayed in-game");
 
             Logger.Listeners.Add(new MessageLogListener());
 
