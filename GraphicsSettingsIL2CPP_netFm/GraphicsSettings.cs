@@ -29,23 +29,18 @@ namespace GraphicsSettingsIL2CPP_netFm
             Apply.SettingChanged += (sender, args) => ApplySettings();
 
             Width = Config.Bind("Resolution", "Width", 0);
-            Width.SettingChanged += (sender, args) => DisableApply();
+            Width.SettingChanged += (sender, args) => Apply.Value = false;
             Height = Config.Bind("Resolution", "Height", 0);
-            Height.SettingChanged += (sender, args) => DisableApply();
+            Height.SettingChanged += (sender, args) => Apply.Value = false;
             DisplayMode = Config.Bind("Resolution", "Display Mode", DisplayModeList.Windowed);
-            DisplayMode.SettingChanged += (sender, args) => DisableApply();
+            DisplayMode.SettingChanged += (sender, args) => Apply.Value = false;
 
             vSync = Config.Bind("Framerate", "vSync", vSyncList.On);
-            vSync.SettingChanged += (sender, args) => DisableApply();
-            Framerate = Config.Bind("Framerate", "Target Framerate", -1, "Target Framerate only works if vSync is Off. Set 0 to unlimited and -1 to default");
-            Framerate.SettingChanged += (sender, args) => DisableApply();
+            vSync.SettingChanged += (sender, args) => Apply.Value = false;
+            Framerate = Config.Bind("Framerate", "Target Framerate", -1, "Target Framerate only works if vSync is Off. Set -1 to unlimited");
+            Framerate.SettingChanged += (sender, args) => Apply.Value = false;
 
             SceneManager.add_sceneLoaded(new Action<Scene, LoadSceneMode>((s, lsm) => GetResolution()));
-        }
-
-        private void DisableApply()
-        {
-            Apply.Value = false;
         }
 
         private enum DisplayModeList
