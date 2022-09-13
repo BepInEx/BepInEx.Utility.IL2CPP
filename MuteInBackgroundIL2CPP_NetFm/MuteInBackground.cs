@@ -13,15 +13,15 @@ namespace MuteInBackgroundIL2CPP_NetFm
     [BepInPlugin(GUID, PluginName, PluginVersion)]
     public class MuteInBackground : BasePlugin
     {
-        public const string GUID = "SpockBauru.MuteInBackgroundIL2CPP_NetFm";
-        public const string PluginName = "Mute In Background";
-        public const string PluginVersion = "0.1";
+        internal const string GUID = "SpockBauru.MuteInBackgroundIL2CPP_NetFm";
+        internal const string PluginName = "Mute In Background";
+        internal const string PluginVersion = "0.1";
 
         //Game Object shared between all SpockPlugins_BepInEx plugins
         public GameObject SpockPlugins_BepInEx;
 
-        
-        public static ConfigEntry<bool> ConfigMuteInBackground { get; private set; }
+
+        internal static ConfigEntry<bool> ConfigMuteInBackground { get; private set; }
 
         public override void Load()
         {

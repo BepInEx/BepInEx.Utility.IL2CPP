@@ -12,11 +12,11 @@ namespace EnableFullScreenToggleIL2CPP_netFm
     /// Allow toggling full screen with alt+enter in games where that has been disabled
     /// </summary>
     [BepInPlugin(GUID, PluginName, PluginVersion)]
-    public class EnableFullScreenToggleIL2CPP_netFm : BasePlugin
+    public class EnableFullScreenToggle : BasePlugin
     {
-        public const string GUID = "SpockBauru.EnableFullScreenToggleIL2CPP_netFm";
-        public const string PluginName = "Enable Full Screen Toggle";
-        public const string PluginVersion = "0.1";
+        internal const string GUID = "SpockBauru.EnableFullScreenToggleIL2CPP_netFm";
+        internal const string PluginName = "Enable Full Screen Toggle";
+        internal const string PluginVersion = "0.1";
 
         //Game Object shared between all SpockPlugins_BepInEx plugins
         public GameObject SpockPlugins_BepInEx;

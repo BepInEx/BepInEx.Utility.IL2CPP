@@ -68,7 +68,7 @@
     <Compile Include="ShadowAndOutline.cs" />
     <Compile Include="MessageCenter.LogEntry.cs" />
     <Compile Include="MessageLogListener.cs" />
-    <Compile Include="MessageCenterIL2CPP_netFm.cs" />
+    <Compile Include="MessageCenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

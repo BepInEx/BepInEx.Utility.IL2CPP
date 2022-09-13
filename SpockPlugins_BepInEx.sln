@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageCenterIL2CPP_netFm",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MuteInBackgroundIL2CPP_NetFm", "MuteInBackgroundIL2CPP_NetFm\MuteInBackgroundIL2CPP_NetFm.csproj", "{A9424D5E-15DE-4DCD-BB13-D9D25B197CB5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphicsSettingsIL2CPP_netFm", "GraphicsSettingsIL2CPP_netFm\GraphicsSettingsIL2CPP_netFm.csproj", "{F53A87D9-D39E-437F-8ED4-1B90E432E23B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{A9424D5E-15DE-4DCD-BB13-D9D25B197CB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9424D5E-15DE-4DCD-BB13-D9D25B197CB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9424D5E-15DE-4DCD-BB13-D9D25B197CB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F53A87D9-D39E-437F-8ED4-1B90E432E23B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F53A87D9-D39E-437F-8ED4-1B90E432E23B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F53A87D9-D39E-437F-8ED4-1B90E432E23B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F53A87D9-D39E-437F-8ED4-1B90E432E23B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

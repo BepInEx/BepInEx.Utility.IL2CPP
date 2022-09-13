@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Il2Cppmscorlib, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\IL2CPP_netFm\Il2Cppmscorlib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="BepInEx.Core">
       <HintPath>..\IL2CPP_netFm\BepInEx.Core.dll</HintPath>
@@ -38,13 +42,12 @@
     <Reference Include="BepInEx.IL2CPP">
       <HintPath>..\IL2CPP_netFm\BepInEx.IL2CPP.dll</HintPath>
     </Reference>
-    <Reference Include="Il2Cppmscorlib">
-      <HintPath>..\IL2CPP_netFm\Il2Cppmscorlib.dll</HintPath>
-    </Reference>
-    <Reference Include="UnhollowerBaseLib">
+    <Reference Include="UnhollowerBaseLib, Version=0.4.33.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\IL2CPP_netFm\UnhollowerBaseLib.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.AudioModule">
+    <Reference Include="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\IL2CPP_netFm\UnityEngine.AudioModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">

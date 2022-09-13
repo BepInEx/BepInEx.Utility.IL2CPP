@@ -2,7 +2,7 @@
 
 namespace MessageCenterIL2CPP_netFm
 {
-    public partial class MessageCenterIL2CPP_netFm
+    public partial class MessageCenter
     {
         private sealed class MessageLogListener : ILogListener
         {

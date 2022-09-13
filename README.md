@@ -1,5 +1,5 @@
 # SpockPlugins_BepInEx IL2CPP
-Various plugins for Unity games ported to IL2CPP
+Various plugins for Unity games ported to IL2CPP<br>
 Disclaimer: This is a temporary repository, it is subject to change without notice.
 
 ### Prerequisites
@@ -26,10 +26,10 @@ Suppress console messages containing certain words. Available in Configuration M
 ## Enable Resize
 An overhaul of [Enable Resize from BepInEx project](https://github.com/BepInEx/BepInEx.Utility) made to increase compatibility.
 
-## Mute In Background ILCPP_netFM
+## Mute In Background
 Mute a game when it loses focus, i.e. when alt-tabbed. Ported form [BepInEx Utility](https://github.com/BepInEx/BepInEx.Utility).
 
-## Enable Full Screen Toggle ILCPP_netFM
+## Enable Full Screen Toggle
 Enables toggling full screen with alt+enter on games with it disabled. Ported form [BepInEx Utility](https://github.com/BepInEx/BepInEx.Utility).
 
 

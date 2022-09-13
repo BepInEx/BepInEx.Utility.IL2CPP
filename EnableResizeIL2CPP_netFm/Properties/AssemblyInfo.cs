@@ -1,5 +1,5 @@
 ﻿using System.Reflection;
-using static EnableResizeIL2CPP_netFm.EnableResizeIL2CPP_netFm;
+using static EnableResizeIL2CPP_netFm.EnableResize;
 
 [assembly: AssemblyTitle(GUID)]
 [assembly: AssemblyDescription(PluginName)]
