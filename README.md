@@ -3,8 +3,8 @@ Various plugins for Unity games ported to IL2CPP<br>
 Disclaimer: This is a temporary repository, it is subject to change without notice.
 
 ### Prerequisites
-- [BepInEx 6.0.0-pre.1](https://github.com/BepInEx/BepInEx/releases/tag/v6.0.0-pre.1)
-- [BepInExConfigManager.Il2Cpp](https://github.com/sinai-dev/BepInExConfigManager/releases) (open with F5)
+- BepInEx 6.0 pre.1. Use [BepInEx_UnityIL2CPP_x64_6.0.0-pre.1.zip](https://github.com/BepInEx/BepInEx/releases/tag/v6.0.0-pre.1)
+- Configuration Manager for IL2CPP. Use [BepInExConfigManager.Il2Cpp.zip](https://github.com/sinai-dev/BepInExConfigManager/releases) (open with F5)
 
 ### Installation
 - Download the desired plugin from the [Releases Section](https://github.com/SpockBauru/SpockPlugins_BepInEx/releases).
