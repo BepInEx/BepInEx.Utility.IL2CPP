@@ -5,7 +5,7 @@ using UnhollowerRuntimeLib;
 using System;
 using BepInEx.Configuration;
 
-namespace MuteInBackgroundIL2CPP_NetFm
+namespace MuteInBackgroundIL2CPP_netFm
 {
     /// <summary>
     /// Mute the game when the screen is in background
@@ -13,7 +13,7 @@ namespace MuteInBackgroundIL2CPP_NetFm
     [BepInPlugin(GUID, PluginName, PluginVersion)]
     public class MuteInBackground : BasePlugin
     {
-        internal const string GUID = "SpockBauru.MuteInBackgroundIL2CPP_NetFm";
+        internal const string GUID = "SpockBauru.MuteInBackgroundIL2CPP_netFm";
         internal const string PluginName = "Mute In Background";
         internal const string PluginVersion = "0.5";
 

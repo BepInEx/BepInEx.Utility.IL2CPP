@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnableFullScreenToggleIL2CP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageCenterIL2CPP_netFm", "MessageCenterIL2CPP_netFm\MessageCenterIL2CPP_netFm.csproj", "{31FB817C-89A3-421F-8508-F20803B556E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MuteInBackgroundIL2CPP_NetFm", "MuteInBackgroundIL2CPP_NetFm\MuteInBackgroundIL2CPP_NetFm.csproj", "{A9424D5E-15DE-4DCD-BB13-D9D25B197CB5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MuteInBackgroundIL2CPP_netFm", "MuteInBackgroundIL2CPP_NetFm\MuteInBackgroundIL2CPP_netFm.csproj", "{A9424D5E-15DE-4DCD-BB13-D9D25B197CB5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphicsSettingsIL2CPP_netFm", "GraphicsSettingsIL2CPP_netFm\GraphicsSettingsIL2CPP_netFm.csproj", "{F53A87D9-D39E-437F-8ED4-1B90E432E23B}"
 EndProject

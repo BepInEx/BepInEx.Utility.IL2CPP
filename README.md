@@ -4,7 +4,7 @@ Disclaimer: This is a temporary repository, it is subject to change without noti
 
 ### Prerequisites
 - [BepInEx 6.0.0-pre.1](https://github.com/BepInEx/BepInEx/releases/tag/v6.0.0-pre.1)
-- [BepInExConfigManager.Il2Cpp](https://github.com/sinai-dev/BepInExConfigManager/releases)(open with F5)
+- [BepInExConfigManager.Il2Cpp](https://github.com/sinai-dev/BepInExConfigManager/releases) (open with F5)
 
 ### Installation
 - Download the desired plugin from the [Releases Section](https://github.com/SpockBauru/SpockPlugins_BepInEx/releases).
