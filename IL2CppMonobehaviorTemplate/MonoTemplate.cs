@@ -38,7 +38,7 @@ using UnityEngine.SceneManagement;
 namespace IL2CppMonobehaviorTemplate
 {
     /// <summary>
-    /// Add here a brief description
+    /// Add a brief description of your class
     /// </summary>
     [BepInPlugin(GUID, PluginName, PluginVersion)]
 
