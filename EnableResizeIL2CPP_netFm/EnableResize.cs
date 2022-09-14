@@ -12,15 +12,18 @@ using UnityEngine;
 
 namespace EnableResizeIL2CPP_netFm
 {
+    /// <summary>
+    /// Enable window resizing in windowed mode.
+    /// </summary>
     [BepInPlugin(GUID, PluginName, PluginVersion)]
     public class EnableResize : BasePlugin
     {
         internal const string GUID = "SpockBauru.EnableResizeIL2CPP_netFm";
         internal const string PluginName = "Enable Resize";
-        internal const string PluginVersion = "0.1";
+        internal const string PluginVersion = "0.5";
 
         //Game Object shared between all SpockPlugins_BepInEx plugins
-        public GameObject SpockPlugins_BepInEx;
+        public GameObject SpockBauru;
 
         internal static ConfigEntry<bool> ConfigEnableResize { get; private set; }
 
@@ -32,15 +35,15 @@ namespace EnableResizeIL2CPP_netFm
             //IL2CPP don't automatically inherits Monobehavior, so needs to add separatelly
             ClassInjector.RegisterTypeInIl2Cpp<EnableResizeComponent>();
 
-            SpockPlugins_BepInEx = GameObject.Find("SpockPlugins_BepInEx");
-            if (SpockPlugins_BepInEx == null)
+            SpockBauru = GameObject.Find("SpockBauru");
+            if (SpockBauru == null)
             {
-                SpockPlugins_BepInEx = new GameObject("SpockPlugins_BepInEx");
-                GameObject.DontDestroyOnLoad(SpockPlugins_BepInEx);
-                SpockPlugins_BepInEx.hideFlags = HideFlags.HideAndDontSave;
-                SpockPlugins_BepInEx.AddComponent<EnableResizeComponent>();
+                SpockBauru = new GameObject("SpockBauru");
+                GameObject.DontDestroyOnLoad(SpockBauru);
+                SpockBauru.hideFlags = HideFlags.HideAndDontSave;
+                SpockBauru.AddComponent<EnableResizeComponent>();
             }
-            else SpockPlugins_BepInEx.AddComponent<EnableResizeComponent>();
+            else SpockBauru.AddComponent<EnableResizeComponent>();
         }
     }
 

@@ -16,26 +16,26 @@ namespace EnableFullScreenToggleIL2CPP_netFm
     {
         internal const string GUID = "SpockBauru.EnableFullScreenToggleIL2CPP_netFm";
         internal const string PluginName = "Enable Full Screen Toggle";
-        internal const string PluginVersion = "0.1";
+        internal const string PluginVersion = "0.5";
 
         //Game Object shared between all SpockPlugins_BepInEx plugins
-        public GameObject SpockPlugins_BepInEx;
+        public GameObject SpockBauru;
 
         public override void Load()
         {
             //IL2CPP don't automatically inherits Monobehavior, so needs to add separatelly
             ClassInjector.RegisterTypeInIl2Cpp<FullScreenToggleComponent>();
 
-            SpockPlugins_BepInEx = GameObject.Find("SpockPlugins_BepInEx");
+            SpockBauru = GameObject.Find("SpockBauru");
 
-            if (SpockPlugins_BepInEx == null)
+            if (SpockBauru == null)
             {
-                SpockPlugins_BepInEx = new GameObject("SpockPlugins_BepInEx");
-                GameObject.DontDestroyOnLoad(SpockPlugins_BepInEx);
-                SpockPlugins_BepInEx.hideFlags = HideFlags.HideAndDontSave;
-                SpockPlugins_BepInEx.AddComponent<FullScreenToggleComponent>();
+                SpockBauru = new GameObject("SpockBauru");
+                GameObject.DontDestroyOnLoad(SpockBauru);
+                SpockBauru.hideFlags = HideFlags.HideAndDontSave;
+                SpockBauru.AddComponent<FullScreenToggleComponent>();
             }
-            else SpockPlugins_BepInEx.AddComponent<FullScreenToggleComponent>();
+            else SpockBauru.AddComponent<FullScreenToggleComponent>();
         }
     }
 

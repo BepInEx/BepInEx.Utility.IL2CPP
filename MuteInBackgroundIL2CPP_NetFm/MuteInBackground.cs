@@ -8,17 +8,17 @@ using BepInEx.Configuration;
 namespace MuteInBackgroundIL2CPP_NetFm
 {
     /// <summary>
-    /// Mute the game in background
+    /// Mute the game when the screen is in background
     /// </summary>
     [BepInPlugin(GUID, PluginName, PluginVersion)]
     public class MuteInBackground : BasePlugin
     {
         internal const string GUID = "SpockBauru.MuteInBackgroundIL2CPP_NetFm";
         internal const string PluginName = "Mute In Background";
-        internal const string PluginVersion = "0.1";
+        internal const string PluginVersion = "0.5";
 
         //Game Object shared between all SpockPlugins_BepInEx plugins
-        public GameObject SpockPlugins_BepInEx;
+        public GameObject SpockBauru;
 
 
         internal static ConfigEntry<bool> ConfigMuteInBackground { get; private set; }
@@ -30,16 +30,16 @@ namespace MuteInBackgroundIL2CPP_NetFm
             //IL2CPP don't automatically inherits Monobehavior, so needs to add separatelly
             ClassInjector.RegisterTypeInIl2Cpp<MuteInBackgroundComponent>();
 
-            SpockPlugins_BepInEx = GameObject.Find("SpockPlugins_BepInEx");
+            SpockBauru = GameObject.Find("SpockBauru");
 
-            if (SpockPlugins_BepInEx == null)
+            if (SpockBauru == null)
             {
-                SpockPlugins_BepInEx = new GameObject("SpockPlugins_BepInEx");
-                GameObject.DontDestroyOnLoad(SpockPlugins_BepInEx);
-                SpockPlugins_BepInEx.hideFlags = HideFlags.HideAndDontSave;
-                SpockPlugins_BepInEx.AddComponent<MuteInBackgroundComponent>();
+                SpockBauru = new GameObject("SpockBauru");
+                GameObject.DontDestroyOnLoad(SpockBauru);
+                SpockBauru.hideFlags = HideFlags.HideAndDontSave;
+                SpockBauru.AddComponent<MuteInBackgroundComponent>();
             }
-            else SpockPlugins_BepInEx.AddComponent<MuteInBackgroundComponent>();
+            else SpockBauru.AddComponent<MuteInBackgroundComponent>();
         }
     }
 

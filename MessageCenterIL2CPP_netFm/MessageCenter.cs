@@ -11,15 +11,18 @@ using Logger = BepInEx.Logging.Logger;
 
 namespace MessageCenterIL2CPP_netFm
 {
+    /// <summary>
+    /// Show log entries marked as "Message" on the game screen
+    /// </summary>
     [BepInPlugin(GUID, PluginName, PluginVersion)]
     public partial class MessageCenter : BasePlugin
     {
         internal const string GUID = "SpockBauru.MessageCenterIL2CPP_netFm";
         internal const string PluginName = "Message Center";
-        internal const string PluginVersion = "0.1";
+        internal const string PluginVersion = "0.5";
 
         //Game Object shared between all SpockPlugins_BepInEx plugins
-        public GameObject SpockPlugins_BepInEx;
+        public GameObject SpockBauru;
 
         private static ConfigEntry<bool> Enabled;
         private static ConfigEntry<string> BlackList;
@@ -36,16 +39,16 @@ namespace MessageCenterIL2CPP_netFm
             //IL2CPP don't automatically inherits Monobehavior, so needs to add separatelly
             ClassInjector.RegisterTypeInIl2Cpp<MessageCenterComponent>();
 
-            SpockPlugins_BepInEx = GameObject.Find("SpockPlugins_BepInEx");
+            SpockBauru = GameObject.Find("SpockBauru");
 
-            if (SpockPlugins_BepInEx == null)
+            if (SpockBauru == null)
             {
-                SpockPlugins_BepInEx = new GameObject("SpockPlugins_BepInEx");
-                GameObject.DontDestroyOnLoad(SpockPlugins_BepInEx);
-                SpockPlugins_BepInEx.hideFlags = HideFlags.HideAndDontSave;
-                SpockPlugins_BepInEx.AddComponent<MessageCenterComponent>();
+                SpockBauru = new GameObject("SpockBauru");
+                GameObject.DontDestroyOnLoad(SpockBauru);
+                SpockBauru.hideFlags = HideFlags.HideAndDontSave;
+                SpockBauru.AddComponent<MessageCenterComponent>();
             }
-            else SpockPlugins_BepInEx.AddComponent<MessageCenterComponent>();
+            else SpockBauru.AddComponent<MessageCenterComponent>();
         }
 
         internal static void OnEntryLogged(LogEventArgs logEventArgs)
@@ -118,7 +121,8 @@ namespace MessageCenterIL2CPP_netFm
                 _textStyle = new GUIStyle
                 {
                     alignment = TextAnchor.UpperLeft,
-                    fontSize = 20
+                    fontSize = 20,
+                    richText = false
                 };
             }
 
@@ -131,7 +135,7 @@ namespace MessageCenterIL2CPP_netFm
                 outlineColor.a = _showCounter;
             }
 
-            ShadowAndOutline.DrawOutline(new Rect(40, 20, Screen.width - 80, 160), _shownLogText, _textStyle, textColor, outlineColor, 3);
+            ShadowAndOutline.DrawOutline(new Rect(40, 20, Screen.width - 80, 160), _shownLogText, _textStyle, textColor, outlineColor, 2);
         }
     }
 }

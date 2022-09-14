@@ -7,12 +7,15 @@ using UnityEngine.SceneManagement;
 
 namespace GraphicsSettingsIL2CPP_netFm
 {
+    /// <summary>
+    /// Change graphics settings like resolution, full screen and vSync in the Configuration Manager (F5)
+    /// </summary>
     [BepInPlugin(GUID, PluginName, PluginVersion)]
     public class GraphicsSettings : BasePlugin
     {
         internal const string GUID = "SpockBauru.GraphicsSettingsIL2CPP_NetFm";
         internal const string PluginName = "Graphics Settings";
-        internal const string PluginVersion = "0.1";
+        internal const string PluginVersion = "0.5";
 
         private static ConfigEntry<int> Width;
         private static ConfigEntry<int> Height;
