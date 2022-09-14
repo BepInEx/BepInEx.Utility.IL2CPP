@@ -24,24 +24,24 @@ namespace GraphicsSettingsIL2CPP_netFm
         private static ConfigEntry<int> Framerate;
         private static ConfigEntry<vSyncList> vSync;
 
-        private static ConfigEntry<bool> Apply;
+        //private static ConfigEntry<bool> Apply;
 
         public override void Load()
         {
-            Apply = Config.Bind("Apply Settings", "Apply All Graphics Settings Bellow", false, "Enable to apply the settings. This will be reset if anything changes.");
-            Apply.SettingChanged += (sender, args) => ApplySettings();
+            //Apply = Config.Bind("Apply Settings", "Apply All Graphics Settings Bellow", false, "Enable to apply the settings. This will be reset if anything changes.");
+            //Apply.SettingChanged += (sender, args) => ApplySettings();
 
             Width = Config.Bind("Resolution", "Width", 0);
-            Width.SettingChanged += (sender, args) => Apply.Value = false;
+            //Width.SettingChanged += (sender, args) => Apply.Value = false;
             Height = Config.Bind("Resolution", "Height", 0);
-            Height.SettingChanged += (sender, args) => Apply.Value = false;
+            //Height.SettingChanged += (sender, args) => Apply.Value = false;
             DisplayMode = Config.Bind("Resolution", "Display Mode", DisplayModeList.Windowed);
-            DisplayMode.SettingChanged += (sender, args) => Apply.Value = false;
+            //DisplayMode.SettingChanged += (sender, args) => Apply.Value = false;
 
             vSync = Config.Bind("Framerate", "vSync", vSyncList.On);
-            vSync.SettingChanged += (sender, args) => Apply.Value = false;
+            //vSync.SettingChanged += (sender, args) => Apply.Value = false;
             Framerate = Config.Bind("Framerate", "Target Framerate", -1, "Target Framerate only works if vSync is Off. Set -1 to unlimited");
-            Framerate.SettingChanged += (sender, args) => Apply.Value = false;
+            //Framerate.SettingChanged += (sender, args) => Apply.Value = false;
 
             SceneManager.add_sceneLoaded(new Action<Scene, LoadSceneMode>((s, lsm) => GetResolution()));
         }
@@ -66,12 +66,12 @@ namespace GraphicsSettingsIL2CPP_netFm
             Height.Value = Screen.height;
             if (Screen.fullScreen) DisplayMode.Value = DisplayModeList.FullScreen;
             if (!Screen.fullScreen) DisplayMode.Value = DisplayModeList.Windowed;
-            Apply.Value = false;
+            //Apply.Value = false;
         }
 
         private void ApplySettings()
         {
-            if (!Apply.Value) return;
+            //if (!Apply.Value) return;
             if (DisplayMode.Value == DisplayModeList.FullScreen)
                 Screen.SetResolution(Width.Value, Height.Value, FullScreenMode.ExclusiveFullScreen);
 
