@@ -13,6 +13,15 @@ Disclaimer: This is a temporary repository, it is subject to change without noti
 ## Graphics Settings
 Change graphics settings like resolution, full screen and vSync in the [Configuration Manager](https://github.com/sinai-dev/BepInExConfigManager/releases)
 
+## Enable Resize
+Enable window resizing when in windowed mode. An overhaul of [Enable Resize from BepInEx project](https://github.com/BepInEx/BepInEx.Utility) made to increase compatibility.
+
+## Mute In Background
+Mute a game when it loses focus, i.e. when alt-tabbed. Ported form [BepInEx Utility](https://github.com/BepInEx/BepInEx.Utility).
+
+## Enable Full Screen Toggle
+Allow toggling full screen with alt+enter in games where that has been disabled. Ported form [BepInEx Utility](https://github.com/BepInEx/BepInEx.Utility).
+
 ## Message Center
 A simple plugin that shows any log entries marked as "Message" on screen. Ported form [BepInEx Utility](https://github.com/BepInEx/BepInEx.Utility)<br>
 Plugins generally use the "Message" log level for things that they want the user to read.
@@ -24,12 +33,3 @@ Please avoid abusing the messages! Only show short and clear messages that the u
 
 ### New Feature: Black List
 Suppress console messages containing certain words. Available in Configuration Manager.
-
-## Enable Resize
-Enable window resizing when in windowed mode. An overhaul of [Enable Resize from BepInEx project](https://github.com/BepInEx/BepInEx.Utility) made to increase compatibility.
-
-## Mute In Background
-Mute a game when it loses focus, i.e. when alt-tabbed. Ported form [BepInEx Utility](https://github.com/BepInEx/BepInEx.Utility).
-
-## Enable Full Screen Toggle
-Allow toggling full screen with alt+enter in games where that has been disabled. Ported form [BepInEx Utility](https://github.com/BepInEx/BepInEx.Utility).
