@@ -47,7 +47,7 @@ namespace IL2CppMonobehaviorTemplate
     {
         // Nothing new here
         internal const string GUID = "com.yourName.pluginName";
-        internal const string PluginName = "Monobehavrion Injection Template";
+        internal const string PluginName = "MonoBehaviour Injection Template";
         internal const string PluginVersion = "0.0.0";
 
         // New Configuration Manager things:
