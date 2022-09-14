@@ -20,7 +20,7 @@ namespace EnableResizeIL2CPP_netFm
     {
         internal const string GUID = "SpockBauru.EnableResizeIL2CPP_netFm";
         internal const string PluginName = "Enable Resize";
-        internal const string PluginVersion = "0.5";
+        internal const string PluginVersion = "0.6";
 
         //Game Object shared between all SpockPlugins_BepInEx plugins
         public GameObject SpockBauru;
@@ -29,8 +29,7 @@ namespace EnableResizeIL2CPP_netFm
 
         public override void Load()
         {
-            ConfigEnableResize = Config.Bind("Config", "Enable Resize", true, "Whether to allow the game window to be resized. Requires game restart to take effect.");
-            if (!ConfigEnableResize.Value) return;
+            ConfigEnableResize = Config.Bind("Config", "Enable Resize", true, "Whether to allow the game window to be resized.");
 
             //IL2CPP don't automatically inherits Monobehavior, so needs to add separatelly
             ClassInjector.RegisterTypeInIl2Cpp<EnableResizeComponent>();
@@ -84,18 +83,34 @@ namespace EnableResizeIL2CPP_netFm
         private const string GET_CLASS_NAME_MAGIC = "UnityWndClass"; //How Anon got this???
         private IntPtr WindowHandle = IntPtr.Zero;
 
-        private int style = 0;
-        private bool fs = false;
-        private bool prevFS = true;
-        private int res = 0;
-        private int prevRes = 1;
-        private int borderless = 1;
-        private int prevBorderless = 0;
+        private int windowStyle = 0;
+        private bool fullScreen = false;
+        private bool prevFullScreen = true;
+        private int resolutionCheck = 0;
+        private int prevResolutionCheck = 1;
+        private int borderlessStyle = 1;
+        private int prevBorderlessStyle = 0;
         private int borderlessMask = WS_CAPTION | WS_MAXIMIZEBOX | WS_MINIMIZEBOX | WS_SYSMENU | WS_THICKFRAME;
+
         private WaitForSecondsRealtime oneSecond = new WaitForSecondsRealtime(1f);
+        private bool isInitialized = false;
 
         internal void Awake()
         {
+            EnableResize.ConfigEnableResize.SettingChanged += (sender, args) => Initialize();
+            Initialize();
+        }
+
+        private void Initialize()
+        {
+            if (!EnableResize.ConfigEnableResize.Value) return;
+
+            if (isInitialized)
+            {
+                StartCoroutine(TestScreen().WrapToIl2Cpp());
+                return;
+            }
+
             var pid = Process.GetCurrentProcess().Id;
             EnumWindows((w, param) =>
             {
@@ -111,9 +126,11 @@ namespace EnableResizeIL2CPP_netFm
 
             if (WindowHandle == IntPtr.Zero) return;
 
+            isInitialized = true;
+
             StartCoroutine(TestScreen().WrapToIl2Cpp());
-            EnableResize.ConfigEnableResize.SettingChanged += (sender, args) => StartCoroutine(TestScreen().WrapToIl2Cpp());
         }
+
 
         private IEnumerator TestScreen()
         {
@@ -121,34 +138,34 @@ namespace EnableResizeIL2CPP_netFm
             {
                 if (!EnableResize.ConfigEnableResize.Value) yield break;
 
-                fs = Screen.fullScreen;
-                res = Screen.width + Screen.height;
-                style = GetWindowLong(WindowHandle, GWL_STYLE);
+                fullScreen = Screen.fullScreen;
+                resolutionCheck = Screen.width + Screen.height;
+                windowStyle = GetWindowLong(WindowHandle, GWL_STYLE);
 
                 // If zero, is in borderless mode
-                borderless = style & borderlessMask;
+                borderlessStyle = windowStyle & borderlessMask;
 
-                if (!fs && prevFS ||
-                    res != prevRes ||
-                    borderless != 0 && prevBorderless == 0)
+                if (!fullScreen && prevFullScreen ||
+                    resolutionCheck != prevResolutionCheck ||
+                    borderlessStyle != 0 && prevBorderlessStyle == 0)
                 {
                     ResizeWindow();
                 }
 
-                prevBorderless = borderless;
-                prevFS = fs;
-                prevRes = res;
+                prevBorderlessStyle = borderlessStyle;
+                prevFullScreen = fullScreen;
+                prevResolutionCheck = resolutionCheck;
                 yield return oneSecond;
             }
         }
 
         private void ResizeWindow()
         {
-            if (fs) return;
-            if (borderless == 0) return;
-            style = GetWindowLong(WindowHandle, GWL_STYLE);
-            style |= WS_THICKFRAME | WS_MAXIMIZEBOX;
-            SetWindowLong(WindowHandle, GWL_STYLE, style);
+            if (fullScreen) return;
+            if (borderlessStyle == 0) return;
+            windowStyle = GetWindowLong(WindowHandle, GWL_STYLE);
+            windowStyle |= WS_THICKFRAME | WS_MAXIMIZEBOX;
+            SetWindowLong(WindowHandle, GWL_STYLE, windowStyle);
         }
     }
 }
