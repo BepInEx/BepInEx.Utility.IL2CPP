@@ -68,8 +68,6 @@
 powershell Compress-Archive -Path '$(SolutionDir)Releases\$(ProjectName)\BepInEx\' -DestinationPath '$(SolutionDir)Releases\$(ProjectName).zip' -Force
 RD /S /Q "$(SolutionDir)Releases\$(ProjectName)\"
 
-xcopy "$(TargetPath)" "D:\RG\BepInEx\plugins" /s /i /y
-
 </PostBuildEvent>
   </PropertyGroup>
 </Project>
