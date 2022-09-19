@@ -3,8 +3,6 @@ using BepInEx.IL2CPP;
 using System;
 using UnhollowerRuntimeLib;
 using UnityEngine;
-using Input = UnityEngine.Input;
-using KeyCode = UnityEngine.KeyCode;
 
 namespace EnableFullScreenToggleIL2CPP_netFm
 {
@@ -16,7 +14,7 @@ namespace EnableFullScreenToggleIL2CPP_netFm
     {
         internal const string GUID = "SpockBauru.EnableFullScreenToggleIL2CPP_netFm";
         internal const string PluginName = "Enable Full Screen Toggle";
-        internal const string PluginVersion = "0.5";
+        internal const string PluginVersion = "0.6";
 
         //Game Object shared between all SpockPlugins_BepInEx plugins
         public GameObject SpockBauru;

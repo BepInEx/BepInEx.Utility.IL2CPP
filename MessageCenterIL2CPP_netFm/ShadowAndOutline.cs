@@ -77,23 +77,5 @@ namespace MessageCenterIL2CPP_netFm
             style.normal.textColor = backupColor;
         }
         public static void DrawLayoutShadow(GUIContent content, GUIStyle style, Color txtColor, Color shadowColor, Vector2 direction, params GUILayoutOption[] options) => DrawShadow(GUILayoutUtility.GetRect(content, style, options), content, style, txtColor, shadowColor, direction);
-
-        public static bool DrawButtonWithShadow(Rect r, GUIContent content, GUIStyle style, float shadowAlpha, Vector2 direction)
-        {
-            GUIStyle letters = style;
-            letters.normal.background = null;
-            letters.hover.background = null;
-            letters.active.background = null;
-
-            bool result = GUI.Button(r, content, style);
-
-            Color color = r.Contains(Event.current.mousePosition) ? letters.hover.textColor : letters.normal.textColor;
-
-            DrawShadow(r, content, letters, color, new Color(0f, 0f, 0f, shadowAlpha), direction);
-
-            return result;
-        }
-
-        public static bool DrawLayoutButtonWithShadow(GUIContent content, GUIStyle style, float shadowAlpha, Vector2 direction, params GUILayoutOption[] options) => DrawButtonWithShadow(GUILayoutUtility.GetRect(content, style, options), content, style, shadowAlpha, direction);
     }
 }

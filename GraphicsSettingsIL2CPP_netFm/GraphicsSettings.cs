@@ -15,7 +15,7 @@ namespace GraphicsSettingsIL2CPP_netFm
     {
         internal const string GUID = "SpockBauru.GraphicsSettingsIL2CPP_NetFm";
         internal const string PluginName = "Graphics Settings";
-        internal const string PluginVersion = "0.5";
+        internal const string PluginVersion = "0.6";
 
         private static ConfigEntry<int> Width;
         private static ConfigEntry<int> Height;

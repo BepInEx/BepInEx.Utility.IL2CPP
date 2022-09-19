@@ -131,7 +131,6 @@ namespace EnableResizeIL2CPP_netFm
             StartCoroutine(TestScreen().WrapToIl2Cpp());
         }
 
-
         private IEnumerator TestScreen()
         {
             while (true)
