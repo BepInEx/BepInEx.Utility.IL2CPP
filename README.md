@@ -1,4 +1,4 @@
-# SpockPlugins_BepInEx IL2CPP
+# BepInEx Utility IL2CPP
 Various plugins for Unity games ported to IL2CPP<br>
 Disclaimer: This is a temporary repository, it is subject to change without notice.
 
