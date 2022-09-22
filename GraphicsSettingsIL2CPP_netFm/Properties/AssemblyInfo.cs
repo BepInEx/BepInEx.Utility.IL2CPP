@@ -1,5 +1,5 @@
 ﻿using System.Reflection;
-using static GraphicsSettingsIL2CPP_netFm.GraphicsSettings;
+using static BepInEx.GraphicsSettings;
 
 [assembly: AssemblyTitle(GUID)]
 [assembly: AssemblyDescription(PluginName)]

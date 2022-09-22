@@ -1,5 +1,5 @@
 ﻿using System.Reflection;
-using static MessageCenterIL2CPP_netFm.MessageCenter;
+using static BepInEx.MessageCenter;
 
 [assembly: AssemblyTitle(GUID)]
 [assembly: AssemblyDescription(PluginName)]

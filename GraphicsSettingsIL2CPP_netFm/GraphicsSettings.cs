@@ -1,11 +1,10 @@
 ﻿using System;
-using BepInEx;
 using BepInEx.IL2CPP;
-using UnityEngine;
 using BepInEx.Configuration;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace GraphicsSettingsIL2CPP_netFm
+namespace BepInEx
 {
     /// <summary>
     /// Change graphics settings like resolution, full screen and vSync in the Configuration Manager (F5)
@@ -13,9 +12,9 @@ namespace GraphicsSettingsIL2CPP_netFm
     [BepInPlugin(GUID, PluginName, PluginVersion)]
     public class GraphicsSettings : BasePlugin
     {
-        internal const string GUID = "SpockBauru.GraphicsSettingsIL2CPP_NetFm";
+        internal const string GUID = "BepInEx.GraphicsSettingsIL2CPP_NetFm";
         internal const string PluginName = "Graphics Settings";
-        internal const string PluginVersion = "0.6";
+        internal const string PluginVersion = "0.7";
 
         private static ConfigEntry<int> Width;
         private static ConfigEntry<int> Height;

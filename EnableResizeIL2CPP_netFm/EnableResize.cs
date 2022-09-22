@@ -1,16 +1,15 @@
-﻿using BepInEx;
-using BepInEx.Configuration;
-using BepInEx.IL2CPP;
-using BepInEx.IL2CPP.Utils.Collections;
-using System;
+﻿using System;
 using System.Collections;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Text;
+using BepInEx.IL2CPP;
+using BepInEx.IL2CPP.Utils.Collections;
+using BepInEx.Configuration;
 using UnhollowerRuntimeLib;
 using UnityEngine;
 
-namespace EnableResizeIL2CPP_netFm
+namespace BepInEx
 {
     /// <summary>
     /// Enable window resizing in windowed mode.
@@ -18,12 +17,12 @@ namespace EnableResizeIL2CPP_netFm
     [BepInPlugin(GUID, PluginName, PluginVersion)]
     public class EnableResize : BasePlugin
     {
-        internal const string GUID = "SpockBauru.EnableResizeIL2CPP_netFm";
+        internal const string GUID = "BepInEx.EnableResizeIL2CPP_netFm";
         internal const string PluginName = "Enable Resize";
-        internal const string PluginVersion = "0.6";
+        internal const string PluginVersion = "0.7";
 
-        //Game Object shared between all SpockPlugins_BepInEx plugins
-        public GameObject SpockBauru;
+        //Game Object shared between all BepInExUtility plugins
+        public GameObject BepInExUtility;
 
         internal static ConfigEntry<bool> ConfigEnableResize { get; private set; }
 
@@ -34,15 +33,15 @@ namespace EnableResizeIL2CPP_netFm
             //IL2CPP don't automatically inherits Monobehavior, so needs to add separatelly
             ClassInjector.RegisterTypeInIl2Cpp<EnableResizeComponent>();
 
-            SpockBauru = GameObject.Find("SpockBauru");
-            if (SpockBauru == null)
+            BepInExUtility = GameObject.Find("BepInExUtility");
+            if (BepInExUtility == null)
             {
-                SpockBauru = new GameObject("SpockBauru");
-                GameObject.DontDestroyOnLoad(SpockBauru);
-                SpockBauru.hideFlags = HideFlags.HideAndDontSave;
-                SpockBauru.AddComponent<EnableResizeComponent>();
+                BepInExUtility = new GameObject("BepInExUtility");
+                GameObject.DontDestroyOnLoad(BepInExUtility);
+                BepInExUtility.hideFlags = HideFlags.HideAndDontSave;
+                BepInExUtility.AddComponent<EnableResizeComponent>();
             }
-            else SpockBauru.AddComponent<EnableResizeComponent>();
+            else BepInExUtility.AddComponent<EnableResizeComponent>();
         }
     }
 
@@ -80,7 +79,7 @@ namespace EnableResizeIL2CPP_netFm
         private const int WS_SYSMENU = 0x80000;
         private const int WS_THICKFRAME = 0x40000;
 
-        private const string GET_CLASS_NAME_MAGIC = "UnityWndClass"; //How Anon got this???
+        private const string GET_CLASS_NAME_MAGIC = "UnityWndClass";
         private IntPtr WindowHandle = IntPtr.Zero;
 
         private int windowStyle = 0;

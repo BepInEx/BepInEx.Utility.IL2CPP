@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace MessageCenterIL2CPP_netFm
+namespace BepInEx
 {
     /// <summary>
     /// Utilities for drawing IMGUI elements like labels with outlines around them.

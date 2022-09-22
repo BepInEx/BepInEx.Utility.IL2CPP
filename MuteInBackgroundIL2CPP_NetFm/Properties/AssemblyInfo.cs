@@ -1,5 +1,5 @@
 ﻿using System.Reflection;
-using static MuteInBackgroundIL2CPP_netFm.MuteInBackground;
+using static BepInEx.MuteInBackground;
 
 [assembly: AssemblyTitle(GUID)]
 [assembly: AssemblyDescription(PluginName)]

@@ -1,4 +1,4 @@
-﻿namespace MessageCenterIL2CPP_netFm
+﻿namespace BepInEx
 {
     public partial class MessageCenterComponent
     {

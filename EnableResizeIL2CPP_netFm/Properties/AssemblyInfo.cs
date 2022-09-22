@@ -1,5 +1,5 @@
 ﻿using System.Reflection;
-using static EnableResizeIL2CPP_netFm.EnableResize;
+using static BepInEx.EnableResize;
 
 [assembly: AssemblyTitle(GUID)]
 [assembly: AssemblyDescription(PluginName)]

@@ -1,15 +1,15 @@
-﻿using BepInEx.Configuration;
-using BepInEx.Logging;
-using BepInEx;
-using BepInEx.IL2CPP;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
-using UnityEngine;
+using System.Collections.Generic;
+using BepInEx.IL2CPP;
+using BepInEx.Configuration;
+using BepInEx.Logging;
 using UnhollowerRuntimeLib;
+using UnityEngine;
+
 using Logger = BepInEx.Logging.Logger;
 
-namespace MessageCenterIL2CPP_netFm
+namespace BepInEx
 {
     /// <summary>
     /// Show log entries marked as "Message" on the game screen
@@ -17,12 +17,12 @@ namespace MessageCenterIL2CPP_netFm
     [BepInPlugin(GUID, PluginName, PluginVersion)]
     public partial class MessageCenter : BasePlugin
     {
-        internal const string GUID = "SpockBauru.MessageCenterIL2CPP_netFm";
+        internal const string GUID = "BepInEx.MessageCenterIL2CPP_netFm";
         internal const string PluginName = "Message Center";
-        internal const string PluginVersion = "0.6";
+        internal const string PluginVersion = "0.7";
 
-        //Game Object shared between all SpockPlugins_BepInEx plugins
-        public GameObject SpockBauru;
+        //Game Object shared between all BepInExUtility plugins
+        public GameObject BepInExUtility;
 
         private static ConfigEntry<bool> Enabled;
         private static ConfigEntry<string> BlackList;
@@ -39,16 +39,16 @@ namespace MessageCenterIL2CPP_netFm
             //IL2CPP don't automatically inherits Monobehavior, so needs to add separatelly
             ClassInjector.RegisterTypeInIl2Cpp<MessageCenterComponent>();
 
-            SpockBauru = GameObject.Find("SpockBauru");
+            BepInExUtility = GameObject.Find("BepInExUtility");
 
-            if (SpockBauru == null)
+            if (BepInExUtility == null)
             {
-                SpockBauru = new GameObject("SpockBauru");
-                GameObject.DontDestroyOnLoad(SpockBauru);
-                SpockBauru.hideFlags = HideFlags.HideAndDontSave;
-                SpockBauru.AddComponent<MessageCenterComponent>();
+                BepInExUtility = new GameObject("BepInExUtility");
+                GameObject.DontDestroyOnLoad(BepInExUtility);
+                BepInExUtility.hideFlags = HideFlags.HideAndDontSave;
+                BepInExUtility.AddComponent<MessageCenterComponent>();
             }
-            else SpockBauru.AddComponent<MessageCenterComponent>();
+            else BepInExUtility.AddComponent<MessageCenterComponent>();
         }
 
         internal static void OnEntryLogged(LogEventArgs logEventArgs)

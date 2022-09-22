@@ -31,6 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="System" />
     <Reference Include="BepInEx.Core">
       <HintPath>..\IL2CPP_netFm\BepInEx.Core.dll</HintPath>
     </Reference>
@@ -40,14 +41,6 @@
     <Reference Include="Il2Cppmscorlib">
       <HintPath>..\IL2CPP_netFm\Il2Cppmscorlib.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
     <Reference Include="UnhollowerBaseLib">
       <HintPath>..\IL2CPP_netFm\UnhollowerBaseLib.dll</HintPath>
     </Reference>
@@ -60,7 +53,8 @@
     <Reference Include="UnityEngine.IMGUIModule">
       <HintPath>..\IL2CPP_netFm\UnityEngine.IMGUIModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.TextRenderingModule">
+    <Reference Include="UnityEngine.TextRenderingModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\IL2CPP_netFm\UnityEngine.TextRenderingModule.dll</HintPath>
     </Reference>
   </ItemGroup>
@@ -73,8 +67,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(TargetPath)" "$(SolutionDir)Releases\$(ProjectName)\BepInEx\Plugins\" /s /i /y
-powershell Compress-Archive -Path '$(SolutionDir)Releases\$(ProjectName)\BepInEx\' -DestinationPath '$(SolutionDir)Releases\$(ProjectName).zip' -Force
-RD /S /Q "$(SolutionDir)Releases\$(ProjectName)\"</PostBuildEvent>
+    <PostBuildEvent>xcopy "$(TargetPath)" "$(SolutionDir)bin\BepInEx\Plugins\" /s /i /y</PostBuildEvent>
   </PropertyGroup>
 </Project>

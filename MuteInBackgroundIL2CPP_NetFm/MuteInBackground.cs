@@ -1,11 +1,10 @@
-﻿using BepInEx;
+﻿using System;
 using BepInEx.IL2CPP;
-using UnityEngine;
-using UnhollowerRuntimeLib;
-using System;
 using BepInEx.Configuration;
+using UnhollowerRuntimeLib;
+using UnityEngine;
 
-namespace MuteInBackgroundIL2CPP_netFm
+namespace BepInEx
 {
     /// <summary>
     /// Mute the game when the screen is in background
@@ -13,12 +12,12 @@ namespace MuteInBackgroundIL2CPP_netFm
     [BepInPlugin(GUID, PluginName, PluginVersion)]
     public class MuteInBackground : BasePlugin
     {
-        internal const string GUID = "SpockBauru.MuteInBackgroundIL2CPP_netFm";
+        internal const string GUID = "BepInEx.MuteInBackgroundIL2CPP_netFm";
         internal const string PluginName = "Mute In Background";
-        internal const string PluginVersion = "0.6";
+        internal const string PluginVersion = "0.7";
 
-        //Game Object shared between all SpockPlugins_BepInEx plugins
-        public GameObject SpockBauru;
+        //Game Object shared between all BepInExUtility plugins
+        public GameObject BepInExUtility;
 
 
         internal static ConfigEntry<bool> ConfigMuteInBackground { get; private set; }
@@ -30,16 +29,16 @@ namespace MuteInBackgroundIL2CPP_netFm
             //IL2CPP don't automatically inherits Monobehavior, so needs to add separatelly
             ClassInjector.RegisterTypeInIl2Cpp<MuteInBackgroundComponent>();
 
-            SpockBauru = GameObject.Find("SpockBauru");
+            BepInExUtility = GameObject.Find("BepInExUtility");
 
-            if (SpockBauru == null)
+            if (BepInExUtility == null)
             {
-                SpockBauru = new GameObject("SpockBauru");
-                GameObject.DontDestroyOnLoad(SpockBauru);
-                SpockBauru.hideFlags = HideFlags.HideAndDontSave;
-                SpockBauru.AddComponent<MuteInBackgroundComponent>();
+                BepInExUtility = new GameObject("BepInExUtility");
+                GameObject.DontDestroyOnLoad(BepInExUtility);
+                BepInExUtility.hideFlags = HideFlags.HideAndDontSave;
+                BepInExUtility.AddComponent<MuteInBackgroundComponent>();
             }
-            else SpockBauru.AddComponent<MuteInBackgroundComponent>();
+            else BepInExUtility.AddComponent<MuteInBackgroundComponent>();
         }
     }
 

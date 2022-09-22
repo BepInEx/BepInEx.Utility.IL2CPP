@@ -1,10 +1,9 @@
-﻿using BepInEx;
+﻿using System;
 using BepInEx.IL2CPP;
-using System;
 using UnhollowerRuntimeLib;
 using UnityEngine;
 
-namespace EnableFullScreenToggleIL2CPP_netFm
+namespace BepInEx
 {
     /// <summary>
     /// Allow toggling full screen with alt+enter in games where that has been disabled
@@ -12,28 +11,28 @@ namespace EnableFullScreenToggleIL2CPP_netFm
     [BepInPlugin(GUID, PluginName, PluginVersion)]
     public class EnableFullScreenToggle : BasePlugin
     {
-        internal const string GUID = "SpockBauru.EnableFullScreenToggleIL2CPP_netFm";
+        internal const string GUID = "BepInEx.EnableFullScreenToggleIL2CPP_netFm";
         internal const string PluginName = "Enable Full Screen Toggle";
-        internal const string PluginVersion = "0.6";
+        internal const string PluginVersion = "0.7";
 
-        //Game Object shared between all SpockPlugins_BepInEx plugins
-        public GameObject SpockBauru;
+        //Game Object shared between all BepInExUtility plugins
+        public GameObject BepInExUtility;
 
         public override void Load()
         {
             //IL2CPP don't automatically inherits Monobehavior, so needs to add separatelly
             ClassInjector.RegisterTypeInIl2Cpp<FullScreenToggleComponent>();
 
-            SpockBauru = GameObject.Find("SpockBauru");
+            BepInExUtility = GameObject.Find("BepInExUtility");
 
-            if (SpockBauru == null)
+            if (BepInExUtility == null)
             {
-                SpockBauru = new GameObject("SpockBauru");
-                GameObject.DontDestroyOnLoad(SpockBauru);
-                SpockBauru.hideFlags = HideFlags.HideAndDontSave;
-                SpockBauru.AddComponent<FullScreenToggleComponent>();
+                BepInExUtility = new GameObject("BepInExUtility");
+                GameObject.DontDestroyOnLoad(BepInExUtility);
+                BepInExUtility.hideFlags = HideFlags.HideAndDontSave;
+                BepInExUtility.AddComponent<FullScreenToggleComponent>();
             }
-            else SpockBauru.AddComponent<FullScreenToggleComponent>();
+            else BepInExUtility.AddComponent<FullScreenToggleComponent>();
         }
     }
 

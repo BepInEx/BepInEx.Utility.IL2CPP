@@ -31,10 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Il2Cppmscorlib, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\IL2CPP_netFm\Il2Cppmscorlib.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="BepInEx.Core">
       <HintPath>..\IL2CPP_netFm\BepInEx.Core.dll</HintPath>
@@ -45,6 +41,10 @@
     <Reference Include="UnhollowerBaseLib, Version=0.4.33.3, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\IL2CPP_netFm\UnhollowerBaseLib.dll</HintPath>
+    </Reference>
+	<Reference Include="Il2Cppmscorlib, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\IL2CPP_netFm\Il2Cppmscorlib.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -60,8 +60,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(TargetPath)" "$(SolutionDir)Releases\$(ProjectName)\BepInEx\Plugins\" /s /i /y
-powershell Compress-Archive -Path '$(SolutionDir)Releases\$(ProjectName)\BepInEx\' -DestinationPath '$(SolutionDir)Releases\$(ProjectName).zip' -Force
-RD /S /Q "$(SolutionDir)Releases\$(ProjectName)\"</PostBuildEvent>
+    <PostBuildEvent>xcopy "$(TargetPath)" "$(SolutionDir)bin\BepInEx\Plugins\" /s /i /y</PostBuildEvent>
   </PropertyGroup>
 </Project>

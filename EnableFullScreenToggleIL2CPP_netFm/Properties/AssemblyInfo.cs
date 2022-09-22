@@ -1,5 +1,5 @@
 ﻿using System.Reflection;
-using static EnableFullScreenToggleIL2CPP_netFm.EnableFullScreenToggle;
+using static BepInEx.EnableFullScreenToggle;
 
 [assembly: AssemblyTitle(GUID)]
 [assembly: AssemblyDescription(PluginName)]
