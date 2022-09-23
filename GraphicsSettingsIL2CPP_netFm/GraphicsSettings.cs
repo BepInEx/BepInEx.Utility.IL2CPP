@@ -23,16 +23,16 @@ namespace BepInEx
         private static ConfigEntry<int> Framerate;
         private static ConfigEntry<vSyncList> vSync;
 
-        private static ConfigEntry<bool> Apply;
+        private static ConfigEntry<bool> AutoApply;
 
         public override void Load()
         {
-            Apply = Config.Bind("Apply Settings", "Apply All Graphics Settings Bellow", false, "If disabled, settings will not be applied even when clicking on \"Save Preferences\" button");
-            Apply.SettingChanged += (sender, args) => ApplySettings();
+            AutoApply = Config.Bind("Apply on Startup", "Apply on Startup", false, "Apply graphics settings when you start the game. May also force the resolution when the game is running");
+            AutoApply.SettingChanged += (sender, args) => ApplySettings();
 
-            Width = Config.Bind("Resolution", "Width", 1280);
+            Width = Config.Bind("Resolution", "Width", 1280, "Set Resolution Width. Minimum is 800");
             Width.SettingChanged += (sender, args) => ApplySettings();
-            Height = Config.Bind("Resolution", "Height", 720);
+            Height = Config.Bind("Resolution", "Height", 720, "Set Resolution Height. Minimum is 600");
             Height.SettingChanged += (sender, args) => ApplySettings();
             DisplayMode = Config.Bind("Resolution", "Display Mode", DisplayModeList.Windowed);
             DisplayMode.SettingChanged += (sender, args) => ApplySettings();
@@ -42,7 +42,10 @@ namespace BepInEx
             Framerate = Config.Bind("Framerate", "Target Framerate", -1, "Target Framerate only works if vSync is Off. Set -1 to unlimited");
             Framerate.SettingChanged += (sender, args) => ApplySettings();
 
-            SceneManager.add_sceneLoaded(new Action<Scene, LoadSceneMode>((s, lsm) => GetResolution()));
+            SceneManager.add_sceneLoaded(new Action<Scene, LoadSceneMode>((s, lsm) => 
+            { 
+                if (AutoApply.Value) ApplySettings(); 
+            }));
         }
 
         private enum DisplayModeList
@@ -59,18 +62,11 @@ namespace BepInEx
             Half = 2
         }
 
-        private void GetResolution()
-        {
-            Apply.Value = false;
-            Width.Value = Screen.width;
-            Height.Value = Screen.height;
-            if (Screen.fullScreen) DisplayMode.Value = DisplayModeList.FullScreen;
-            if (!Screen.fullScreen) DisplayMode.Value = DisplayModeList.Windowed;
-        }
-
         private void ApplySettings()
         {
-            if (!Apply.Value) return;
+            if (Width.Value < 800) Width.Value = 800;
+            if (Height.Value < 600) Height.Value = 600;
+
             if (DisplayMode.Value == DisplayModeList.FullScreen)
                 Screen.SetResolution(Width.Value, Height.Value, FullScreenMode.ExclusiveFullScreen);
 

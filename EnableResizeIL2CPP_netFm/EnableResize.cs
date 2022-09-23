@@ -51,7 +51,7 @@ namespace BepInEx
         public EnableResizeComponent(IntPtr handle) : base(handle) { }
 
 
-        //Old code from mono version starts here
+        //MonoBehaviour code starts here
         public delegate bool EnumWindowsProc(IntPtr hWnd, IntPtr lParam);
 
         [DllImport("user32.dll")]
@@ -84,12 +84,10 @@ namespace BepInEx
 
         private int windowStyle = 0;
         private bool fullScreen = false;
-        private bool prevFullScreen = true;
-        private int resolutionCheck = 0;
-        private int prevResolutionCheck = 1;
         private int borderlessStyle = 1;
-        private int prevBorderlessStyle = 0;
-        private int borderlessMask = WS_CAPTION | WS_MAXIMIZEBOX | WS_MINIMIZEBOX | WS_SYSMENU | WS_THICKFRAME;
+        private const int borderlessMask = WS_CAPTION | WS_MAXIMIZEBOX | WS_MINIMIZEBOX | WS_SYSMENU | WS_THICKFRAME;
+        private int resizableStyle = 1;
+        private const int resizableMask = WS_THICKFRAME | WS_MAXIMIZEBOX;
 
         private WaitForSecondsRealtime oneSecond = new WaitForSecondsRealtime(1f);
         private bool isInitialized = false;
@@ -124,9 +122,7 @@ namespace BepInEx
             }, IntPtr.Zero);
 
             if (WindowHandle == IntPtr.Zero) return;
-
             isInitialized = true;
-
             StartCoroutine(TestScreen().WrapToIl2Cpp());
         }
 
@@ -137,22 +133,21 @@ namespace BepInEx
                 if (!EnableResize.ConfigEnableResize.Value) yield break;
 
                 fullScreen = Screen.fullScreen;
-                resolutionCheck = Screen.width + Screen.height;
                 windowStyle = GetWindowLong(WindowHandle, GWL_STYLE);
 
                 // If zero, is in borderless mode
                 borderlessStyle = windowStyle & borderlessMask;
 
-                if (!fullScreen && prevFullScreen ||
-                    resolutionCheck != prevResolutionCheck ||
-                    borderlessStyle != 0 && prevBorderlessStyle == 0)
+                // if zero, is not resizable
+                resizableStyle = windowStyle & resizableMask;
+
+                if (resizableStyle  == 0 &&
+                    borderlessStyle != 0 &&
+                    fullScreen      == false)
                 {
                     ResizeWindow();
                 }
 
-                prevBorderlessStyle = borderlessStyle;
-                prevFullScreen = fullScreen;
-                prevResolutionCheck = resolutionCheck;
                 yield return oneSecond;
             }
         }
