@@ -11,7 +11,8 @@ Disclaimer: This is a temporary repository, it is subject to change without noti
 - Extract the .zip file in the game folder (where `game.exe` is).
 
 ## Graphics Settings
-Change graphics settings like resolution, full screen and vSync in the [Configuration Manager](https://github.com/sinai-dev/BepInExConfigManager/releases). Press F5 to open.
+Change graphics settings like resolution, full screen and vSync in the [Configuration Manager](https://github.com/sinai-dev/BepInExConfigManager/releases). Press F5 to open.<br>
+**New Feature:** Apply setings on startup. This will overwrite the game settings, use with caution.
 
 ## Enable Resize
 Enable window resizing when in windowed mode. An overhaul of [Enable Resize from BepInEx project](https://github.com/BepInEx/BepInEx.Utility) made to increase compatibility.
