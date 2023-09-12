@@ -3,10 +3,10 @@ using System.Collections;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Text;
-using BepInEx.IL2CPP;
-using BepInEx.IL2CPP.Utils.Collections;
 using BepInEx.Configuration;
-using UnhollowerRuntimeLib;
+using BepInEx.Unity.IL2CPP;
+using BepInEx.Unity.IL2CPP.Utils.Collections;
+using Il2CppInterop.Runtime.Injection;
 using UnityEngine;
 
 namespace BepInEx

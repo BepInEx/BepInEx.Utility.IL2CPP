@@ -1,7 +1,7 @@
 ﻿using System;
-using BepInEx.IL2CPP;
 using BepInEx.Configuration;
-using UnhollowerRuntimeLib;
+using BepInEx.Unity.IL2CPP;
+using Il2CppInterop.Runtime.Injection;
 using UnityEngine;
 
 namespace BepInEx

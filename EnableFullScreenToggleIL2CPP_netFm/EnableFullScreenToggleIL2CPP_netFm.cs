@@ -1,7 +1,9 @@
 ﻿using System;
-using BepInEx.IL2CPP;
-using UnhollowerRuntimeLib;
+using BepInEx.Unity.IL2CPP;
+using Il2CppInterop.Runtime.Injection;
 using UnityEngine;
+using Input = UnityEngine.Input;
+using KeyCode = UnityEngine.KeyCode;
 
 namespace BepInEx
 {

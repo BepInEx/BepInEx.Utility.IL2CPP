@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
-using BepInEx.IL2CPP;
 using BepInEx.Configuration;
 using BepInEx.Logging;
-using UnhollowerRuntimeLib;
+using BepInEx.Unity.IL2CPP;
+using Il2CppInterop.Runtime.Injection;
 using UnityEngine;
 
 using Logger = BepInEx.Logging.Logger;

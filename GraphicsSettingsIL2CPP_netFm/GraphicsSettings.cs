@@ -1,6 +1,6 @@
 ﻿using System;
-using BepInEx.IL2CPP;
 using BepInEx.Configuration;
+using BepInEx.Unity.IL2CPP;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
