@@ -17,7 +17,7 @@ namespace BepInEx
     [BepInPlugin(GUID, PluginName, PluginVersion)]
     public partial class MessageCenter : BasePlugin
     {
-        internal const string GUID = "BepInEx.MessageCenterIL2CPP_netFm";
+        internal const string GUID = "BepInEx.MessageCenterIL2CPP_net6";
         internal const string PluginName = "Message Center";
         internal const string PluginVersion = "0.7";
 

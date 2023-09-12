@@ -9,40 +9,40 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Il2Cppmscorlib">
-      <HintPath>..\IL2CPP_netFm\Il2Cppmscorlib.dll</HintPath>
+      <HintPath>..\IL2CPP_net6\Il2Cppmscorlib.dll</HintPath>
     </Reference>
     <Reference Include="Il2CppSystem">
-      <HintPath>..\IL2CPP_netFm\Il2CppSystem.dll</HintPath>
+      <HintPath>..\IL2CPP_net6\Il2CppSystem.dll</HintPath>
     </Reference>
     <Reference Include="Il2CppSystem.Core">
-      <HintPath>..\IL2CPP_netFm\Il2CppSystem.Core.dll</HintPath>
+      <HintPath>..\IL2CPP_net6\Il2CppSystem.Core.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>..\IL2CPP_netFm\UnityEngine.dll</HintPath>
+      <HintPath>..\IL2CPP_net6\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AudioModule">
-      <HintPath>..\IL2CPP_netFm\UnityEngine.AudioModule.dll</HintPath>
+      <HintPath>..\IL2CPP_net6\UnityEngine.AudioModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\IL2CPP_netFm\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>..\IL2CPP_net6\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.IMGUIModule">
-      <HintPath>..\IL2CPP_netFm\UnityEngine.IMGUIModule.dll</HintPath>
+      <HintPath>..\IL2CPP_net6\UnityEngine.IMGUIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.InputLegacyModule">
-      <HintPath>..\IL2CPP_netFm\UnityEngine.InputLegacyModule.dll</HintPath>
+      <HintPath>..\IL2CPP_net6\UnityEngine.InputLegacyModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.InputModule">
-      <HintPath>..\IL2CPP_netFm\UnityEngine.InputModule.dll</HintPath>
+      <HintPath>..\IL2CPP_net6\UnityEngine.InputModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TextRenderingModule">
-      <HintPath>..\IL2CPP_netFm\UnityEngine.TextRenderingModule.dll</HintPath>
+      <HintPath>..\IL2CPP_net6\UnityEngine.TextRenderingModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>..\IL2CPP_netFm\UnityEngine.UI.dll</HintPath>
+      <HintPath>..\IL2CPP_net6\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UIModule">
-      <HintPath>..\IL2CPP_netFm\UnityEngine.UIModule.dll</HintPath>
+      <HintPath>..\IL2CPP_net6\UnityEngine.UIModule.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">

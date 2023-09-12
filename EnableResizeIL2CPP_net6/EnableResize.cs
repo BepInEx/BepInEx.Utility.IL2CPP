@@ -17,7 +17,7 @@ namespace BepInEx
     [BepInPlugin(GUID, PluginName, PluginVersion)]
     public class EnableResize : BasePlugin
     {
-        internal const string GUID = "BepInEx.EnableResizeIL2CPP_netFm";
+        internal const string GUID = "BepInEx.EnableResizeIL2CPP_net6";
         internal const string PluginName = "Enable Resize";
         internal const string PluginVersion = "0.7";
 

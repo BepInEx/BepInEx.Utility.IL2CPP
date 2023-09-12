@@ -12,7 +12,7 @@ namespace BepInEx
     [BepInPlugin(GUID, PluginName, PluginVersion)]
     public class GraphicsSettings : BasePlugin
     {
-        internal const string GUID = "BepInEx.GraphicsSettingsIL2CPP_NetFm";
+        internal const string GUID = "BepInEx.GraphicsSettingsIL2CPP_net6";
         internal const string PluginName = "Graphics Settings";
         internal const string PluginVersion = "0.7";
 

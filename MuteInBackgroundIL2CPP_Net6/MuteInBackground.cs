@@ -12,7 +12,7 @@ namespace BepInEx
     [BepInPlugin(GUID, PluginName, PluginVersion)]
     public class MuteInBackground : BasePlugin
     {
-        internal const string GUID = "BepInEx.MuteInBackgroundIL2CPP_netFm";
+        internal const string GUID = "BepInEx.MuteInBackgroundIL2CPP_net6";
         internal const string PluginName = "Mute In Background";
         internal const string PluginVersion = "0.7";
 

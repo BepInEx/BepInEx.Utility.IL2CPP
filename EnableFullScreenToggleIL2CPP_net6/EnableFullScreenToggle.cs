@@ -13,7 +13,7 @@ namespace BepInEx
     [BepInPlugin(GUID, PluginName, PluginVersion)]
     public class EnableFullScreenToggle : BasePlugin
     {
-        internal const string GUID = "BepInEx.EnableFullScreenToggleIL2CPP_netFm";
+        internal const string GUID = "BepInEx.EnableFullScreenToggleIL2CPP_net6";
         internal const string PluginName = "Enable Full Screen Toggle";
         internal const string PluginVersion = "0.7";
 
