@@ -1,17 +1,26 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnableResizeIL2CPP_netFm", "EnableResizeIL2CPP_netFm\EnableResizeIL2CPP_netFm.csproj", "{9921DE3B-DEF2-4470-BD8F-23F207128844}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnableResizeIL2CPP_net6", "EnableResizeIL2CPP_net6\EnableResizeIL2CPP_net6.csproj", "{9921DE3B-DEF2-4470-BD8F-23F207128844}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnableFullScreenToggleIL2CPP_netFm", "EnableFullScreenToggleIL2CPP_netFm\EnableFullScreenToggleIL2CPP_netFm.csproj", "{F37EF379-2D98-469F-8CBF-EC995F54D7DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnableFullScreenToggleIL2CPP_net6", "EnableFullScreenToggleIL2CPP_net6\EnableFullScreenToggleIL2CPP_net6.csproj", "{F37EF379-2D98-469F-8CBF-EC995F54D7DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageCenterIL2CPP_netFm", "MessageCenterIL2CPP_netFm\MessageCenterIL2CPP_netFm.csproj", "{31FB817C-89A3-421F-8508-F20803B556E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessageCenterIL2CPP_net6", "MessageCenterIL2CPP_net6\MessageCenterIL2CPP_net6.csproj", "{31FB817C-89A3-421F-8508-F20803B556E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MuteInBackgroundIL2CPP_netFm", "MuteInBackgroundIL2CPP_NetFm\MuteInBackgroundIL2CPP_netFm.csproj", "{A9424D5E-15DE-4DCD-BB13-D9D25B197CB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MuteInBackgroundIL2CPP_net6", "MuteInBackgroundIL2CPP_net6\MuteInBackgroundIL2CPP_net6.csproj", "{A9424D5E-15DE-4DCD-BB13-D9D25B197CB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphicsSettingsIL2CPP_netFm", "GraphicsSettingsIL2CPP_netFm\GraphicsSettingsIL2CPP_netFm.csproj", "{F53A87D9-D39E-437F-8ED4-1B90E432E23B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphicsSettingsIL2CPP_net6", "GraphicsSettingsIL2CPP_net6\GraphicsSettingsIL2CPP_net6.csproj", "{F53A87D9-D39E-437F-8ED4-1B90E432E23B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MuteInBackgroundIL2CPP_NetFm", "MuteInBackgroundIL2CPP_NetFm\MuteInBackgroundIL2CPP_NetFm.csproj", "{FB9B78F4-06DE-4DCD-B444-60ABD0AF82CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnableFullScreenToggleIL2CPP_netFm", "EnableFullScreenToggleIL2CPP_netFm\EnableFullScreenToggleIL2CPP_netFm.csproj", "{8AF94CAA-E027-4AA4-9EE9-87FB1FDF8275}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnableResizeIL2CPP_netFm", "EnableResizeIL2CPP_netFm\EnableResizeIL2CPP_netFm.csproj", "{3E576FAF-8682-44A3-BD1A-71B0924E9EEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageCenterIL2CPP_netFm", "MessageCenterIL2CPP_netFm\MessageCenterIL2CPP_netFm.csproj", "{8128767B-654B-48FE-ACE3-AD45226AF36D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphicsSettingsIL2CPP_netFm", "GraphicsSettingsIL2CPP_netFm\GraphicsSettingsIL2CPP_netFm.csproj", "{68AB0959-DB29-4620-840C-077FC3216D38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +48,26 @@ Global
 		{F53A87D9-D39E-437F-8ED4-1B90E432E23B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F53A87D9-D39E-437F-8ED4-1B90E432E23B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F53A87D9-D39E-437F-8ED4-1B90E432E23B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB9B78F4-06DE-4DCD-B444-60ABD0AF82CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB9B78F4-06DE-4DCD-B444-60ABD0AF82CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB9B78F4-06DE-4DCD-B444-60ABD0AF82CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB9B78F4-06DE-4DCD-B444-60ABD0AF82CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AF94CAA-E027-4AA4-9EE9-87FB1FDF8275}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AF94CAA-E027-4AA4-9EE9-87FB1FDF8275}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AF94CAA-E027-4AA4-9EE9-87FB1FDF8275}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AF94CAA-E027-4AA4-9EE9-87FB1FDF8275}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E576FAF-8682-44A3-BD1A-71B0924E9EEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E576FAF-8682-44A3-BD1A-71B0924E9EEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E576FAF-8682-44A3-BD1A-71B0924E9EEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E576FAF-8682-44A3-BD1A-71B0924E9EEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8128767B-654B-48FE-ACE3-AD45226AF36D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8128767B-654B-48FE-ACE3-AD45226AF36D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8128767B-654B-48FE-ACE3-AD45226AF36D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8128767B-654B-48FE-ACE3-AD45226AF36D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68AB0959-DB29-4620-840C-077FC3216D38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68AB0959-DB29-4620-840C-077FC3216D38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68AB0959-DB29-4620-840C-077FC3216D38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68AB0959-DB29-4620-840C-077FC3216D38}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

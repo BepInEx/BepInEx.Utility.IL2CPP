@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9921DE3B-DEF2-4470-BD8F-23F207128844}</ProjectGuid>
+    <ProjectGuid>{3E576FAF-8682-44A3-BD1A-71B0924E9EEE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>EnableResizeIL2CPP_netFm</RootNamespace>

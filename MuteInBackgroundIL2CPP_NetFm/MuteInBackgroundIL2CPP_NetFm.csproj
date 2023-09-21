@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A9424D5E-15DE-4DCD-BB13-D9D25B197CB5}</ProjectGuid>
+    <ProjectGuid>{FB9B78F4-06DE-4DCD-B444-60ABD0AF82CF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MuteInBackgroundIL2CPP_netFm</RootNamespace>
@@ -42,7 +42,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\IL2CPP_netFm\UnhollowerBaseLib.dll</HintPath>
     </Reference>
-	<Reference Include="Il2Cppmscorlib, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Il2Cppmscorlib, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\IL2CPP_netFm\Il2Cppmscorlib.dll</HintPath>
     </Reference>

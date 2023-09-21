@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F37EF379-2D98-469F-8CBF-EC995F54D7DF}</ProjectGuid>
+    <ProjectGuid>{8AF94CAA-E027-4AA4-9EE9-87FB1FDF8275}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>EnableFullScreenToggleIL2CPP_netFm</RootNamespace>
