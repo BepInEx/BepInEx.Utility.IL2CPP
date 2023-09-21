@@ -9,22 +9,19 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Il2Cppmscorlib">
-      <HintPath>E:\Downloads\[ScrewThisNoise] HoneyCome BetterRepack R1\[ScrewThisNoise] HoneyCome BetterRepack R1\BepInEx\interop\Il2Cppmscorlib.dll</HintPath>
+      <HintPath>..\IL2CPP_net6\Il2Cppmscorlib.dll</HintPath>
     </Reference>
     <Reference Include="Il2CppSystem">
-      <HintPath>E:\Downloads\[ScrewThisNoise] HoneyCome BetterRepack R1\[ScrewThisNoise] HoneyCome BetterRepack R1\BepInEx\interop\Il2CppSystem.dll</HintPath>
+      <HintPath>..\IL2CPP_net6\Il2CppSystem.dll</HintPath>
     </Reference>
     <Reference Include="Il2CppSystem.Core">
-      <HintPath>E:\Downloads\[ScrewThisNoise] HoneyCome BetterRepack R1\[ScrewThisNoise] HoneyCome BetterRepack R1\BepInEx\interop\Il2CppSystem.Core.dll</HintPath>
+      <HintPath>..\IL2CPP_net6\Il2CppSystem.Core.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>E:\Downloads\[ScrewThisNoise] HoneyCome BetterRepack R1\[ScrewThisNoise] HoneyCome BetterRepack R1\BepInEx\interop\UnityEngine.dll</HintPath>
+      <HintPath>..\IL2CPP_net6\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>E:\Downloads\[ScrewThisNoise] HoneyCome BetterRepack R1\[ScrewThisNoise] HoneyCome BetterRepack R1\BepInEx\interop\UnityEngine.CoreModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.SharedInternalsModule">
-      <HintPath>E:\Downloads\[ScrewThisNoise] HoneyCome BetterRepack R1\[ScrewThisNoise] HoneyCome BetterRepack R1\BepInEx\interop\UnityEngine.SharedInternalsModule.dll</HintPath>
+      <HintPath>..\IL2CPP_net6\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
