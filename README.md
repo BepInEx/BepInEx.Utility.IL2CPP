@@ -1,10 +1,14 @@
 # BepInEx Utility IL2CPP
-Various plugins for Unity games ported to IL2CPP<br>
+Various plugins for Unity games ported to IL2CPP. Projects marked with netFM are for BepInEx 6 pre1, while projects marked with net6 are for the latest BepInEx 6 builds.<br>
 Disclaimer: This is a temporary repository, it is subject to change without notice.
 
 ### Prerequisites
-- Recent [nightly build of BepInEx 6.0](https://builds.bepinex.dev/projects/bepinex_be) (newer than pre.1).
+#### netFM / BepInEx 6 pre1
+- BepInEx 6.0 pre.1. Use [BepInEx_UnityIL2CPP_x64_6.0.0-pre.1.zip](https://github.com/BepInEx/BepInEx/releases/tag/v6.0.0-pre.1)
 - Configuration Manager for IL2CPP. Use [BepInExConfigManager.Il2Cpp.zip](https://github.com/sinai-dev/BepInExConfigManager/releases) (open with F5)
+### net6 / BepInEx 6 latest
+- Recent [nightly build of BepInEx 6.0](https://builds.bepinex.dev/projects/bepinex_be) (newer than pre.1)
+- Currently no working ConfigManager (WIP).
 
 ### Installation
 - Download the desired plugin from the [Releases Section](https://github.com/SpockBauru/SpockPlugins_BepInEx/releases).
