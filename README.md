@@ -1,14 +1,15 @@
 # BepInEx Utility IL2CPP
-Various plugins for Unity games ported to IL2CPP. Projects marked with netFM are for BepInEx 6 pre1, while projects marked with net6 are for the latest BepInEx 6 builds.<br>
-Disclaimer: This is a temporary repository, it is subject to change without notice.
+Various universal BepInEx utility plugins for Unity games compiled with IL2CPP. Projects marked with netFM are for BepInEx 6 pre1, while projects marked with net6 are for the latest BepInEx 6 builds.
+
+If the game is not compiled with IL2CPP, use [BepInEx.Utility](https://github.com/BepInEx/BepInEx.Utility) instead.
 
 ### Prerequisites
 #### netFM / BepInEx 6 pre1
 - BepInEx 6.0 pre.1. Use [BepInEx_UnityIL2CPP_x64_6.0.0-pre.1.zip](https://github.com/BepInEx/BepInEx/releases/tag/v6.0.0-pre.1)
-- Configuration Manager for IL2CPP. Use [BepInExConfigManager.Il2Cpp.zip](https://github.com/sinai-dev/BepInExConfigManager/releases) (open with F5)
+- Configuration Manager for IL2CPP. Use [BepInExConfigManager.Il2Cpp](https://github.com/sinai-dev/BepInExConfigManager/releases) (open with F5)
 ### net6 / BepInEx 6 latest
 - Recent [nightly build of BepInEx 6.0](https://builds.bepinex.dev/projects/bepinex_be) (newer than pre.1)
-- Currently no working ConfigManager (WIP).
+- Configuration Manager for IL2CPP. Use [BepInEx.ConfigurationManager](https://github.com/BepInEx/BepInEx.ConfigurationManager/releases) (open with F1, may require additional patches to make IMGUI work, [example](https://github.com/IllusionMods/BepisPlugins/tree/a27b6e4b4701eaff09bceb07f651fc2bacc82e29/src/IMGUIModule.Il2Cpp.CoreCLR.Patcher))
 
 ### Installation
 - Download the desired plugin from the [Releases Section](https://github.com/SpockBauru/SpockPlugins_BepInEx/releases).
