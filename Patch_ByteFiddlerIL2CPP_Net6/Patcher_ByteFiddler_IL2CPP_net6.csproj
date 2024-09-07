@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-		<AssemblyName>ByteFiddler</AssemblyName>
+		<AssemblyName>Patcher_ByteFiddler</AssemblyName>
 		<RootNamespace>BepInEx</RootNamespace>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 	</PropertyGroup>

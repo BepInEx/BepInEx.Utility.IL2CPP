@@ -36,4 +36,19 @@ foreach ($pluginFile in Get-ChildItem -Path $plugins)
     }
 }
 
+$copy = $dir + "\copy\BepInEx\patchers" 
+$patchers = $dir + "\BepInEx\patchers"
+foreach ($patcherFile in Get-ChildItem -Path $patchers) 
+{
+    try
+    {
+        CreateZip ($patcherFile)
+    }
+    catch 
+    {
+        # retry
+        CreateZip ($patcherFile)
+    }
+}
+
 Remove-Item -Force -Path ($dir + "\copy") -Recurse

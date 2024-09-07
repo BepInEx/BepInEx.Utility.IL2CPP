@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-		<AssemblyName>ProcessorAffinityOverride</AssemblyName>
+		<AssemblyName>Patcher_ProcessorAffinityOverride</AssemblyName>
 		<RootNamespace>BepInEx</RootNamespace>
 	</PropertyGroup>
 
