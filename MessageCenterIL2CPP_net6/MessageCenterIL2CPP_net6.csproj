@@ -3,6 +3,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <OutputType>Library</OutputType>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <RootNamespace>BepInEx</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.664" />
