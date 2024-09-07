@@ -39,3 +39,17 @@ Please avoid abusing the messages! Only show short and clear messages that the u
 
 ### New Feature: Black List
 Suppress console messages containing certain words. Available in Configuration Manager.
+
+## ByteFiddler (patcher)
+This patcher allows you to replace a sequence of bytes in the memory of the current process. Use with caution!
+
+1. Run the game once to generate `BepInEx\config\ByteFiddler.cfg` and edit it. 
+2. Change the settings as needed, read setting descriptions for more info.
+3. Run the game and the plugin will replace the found pattern with the replacement pattern. Check the log for errors or the success message.
+
+## ProcessAffinityOverride (patcher)
+This patcher allows you to override processor affinity of the current process.
+
+1. Run the game once to generate `BepInEx\config\ProcessAffinityOverride.cfg` and edit it. 
+2. Change the settings as needed, read setting descriptions for more info.
+3. Run the game and the plugin should change the affinity. Check the log for errors or the success message. You can see if it worked by checking process affinity in Task Manager.
