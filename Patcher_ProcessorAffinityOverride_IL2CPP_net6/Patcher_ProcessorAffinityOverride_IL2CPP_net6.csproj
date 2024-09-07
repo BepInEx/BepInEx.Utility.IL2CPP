@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<AssemblyName>ProcessorAffinityOverride</AssemblyName>
+		<RootNamespace>BepInEx</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.680" />
+		<PackageReference Include="BepInEx.Unity.Mono.Preloader" Version="6.0.0-be.680" />
+	</ItemGroup>
+
+	<Target Name="CopyCustomContent" AfterTargets="AfterBuild">
+		<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(SolutionDir)bin\BepInEx\Patchers" />
+	</Target>
+
+</Project>
