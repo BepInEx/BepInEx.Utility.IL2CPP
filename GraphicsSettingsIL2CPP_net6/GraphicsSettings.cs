@@ -1,7 +1,9 @@
 ﻿using System;
 using BepInEx.Configuration;
+using BepInEx.Logging;
 using BepInEx.Unity.IL2CPP;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 namespace BepInEx
@@ -27,29 +29,54 @@ namespace BepInEx
 
         public override void Load()
         {
-            AutoApply = Config.Bind("Apply on Startup", "Apply on Startup", false, "Apply graphics settings when you start the game. May also force the resolution when the game is running");
-            AutoApply.SettingChanged += (sender, args) => ApplySettings();
+            AutoApply = Config.Bind("General", "Auto Apply", false, "Apply all graphics settings automatically whenever active scene changes. Otherwise settings are only applied as they are changed.");
+            var applySettingsAction = (UnityAction<Scene, Scene>)new Action<Scene, Scene>((f, t) => ApplySettings());
+            var applySettingsAction2 = (UnityAction<Scene, LoadSceneMode>)new Action<Scene, LoadSceneMode>((f, t) => ApplySettings());
+            void ApplySceneHook(bool showWarning)
+            {
+                try
+                {
+                    if (AutoApply.Value)
+                        SceneManager.add_activeSceneChanged(applySettingsAction);
+                    else
+                        SceneManager.remove_activeSceneChanged(applySettingsAction);
+                }
+                catch (NotSupportedException)
+                {
+                    try
+                    {
+                        if (AutoApply.Value)
+                            SceneManager.add_sceneLoaded(applySettingsAction2);
+                        else
+                            SceneManager.remove_sceneLoaded(applySettingsAction2);
+                    }
+                    catch (NotSupportedException)
+                    {
+                        Log.Log(showWarning ? LogLevel.Message | LogLevel.Warning : LogLevel.Warning, "Could not hook the scene change event handler, changes will not be applied automatically");
+                    }
+                }
+            }
+            AutoApply.SettingChanged += (sender, args) => { ApplySceneHook(true); };
 
-            Width = Config.Bind("Resolution", "Width", 1280, "Set Resolution Width. Minimum is 800");
+            Width = Config.Bind("Resolution Override", "Width", 0, "Force resolution width to this value. Minimum is 800. Set to 0 to disable this feature.");
             Width.SettingChanged += (sender, args) => ApplySettings();
-            Height = Config.Bind("Resolution", "Height", 720, "Set Resolution Height. Minimum is 600");
+            Height = Config.Bind("Resolution Override", "Height", 0, "Force resolution height to this value. Minimum is 600. Set to 0 to disable this feature.");
             Height.SettingChanged += (sender, args) => ApplySettings();
-            DisplayMode = Config.Bind("Resolution", "Display Mode", DisplayModeList.Windowed);
+            DisplayMode = Config.Bind("Resolution Override", "Display Mode", DisplayModeList.Default, "Force specified window mode.");
             DisplayMode.SettingChanged += (sender, args) => ApplySettings();
 
-            vSync = Config.Bind("Framerate", "vSync", vSyncList.On);
+            vSync = Config.Bind("Framerate Override", "vSync", vSyncList.Default, "Force specified vsync mode.");
             vSync.SettingChanged += (sender, args) => ApplySettings();
-            Framerate = Config.Bind("Framerate", "Target Framerate", -1, "Target Framerate only works if vSync is Off. Set -1 to unlimited");
+            Framerate = Config.Bind("Framerate Override", "Target Framerate", Application.targetFrameRate, "Force specified target Framerate. Only works if vSync is Off. Set -1 for unlimited.");
             Framerate.SettingChanged += (sender, args) => ApplySettings();
 
-            SceneManager.add_sceneLoaded(new Action<Scene, LoadSceneMode>((s, lsm) => 
-            { 
-                if (AutoApply.Value) ApplySettings(); 
-            }));
+            if (AutoApply.Value)
+                ApplySceneHook(false);
         }
 
         private enum DisplayModeList
         {
+            Default = 0,
             FullScreen,
             Windowed,
             Borderless_FullScreen
@@ -57,27 +84,56 @@ namespace BepInEx
 
         private enum vSyncList
         {
+            Default = -1,
             On = 1,
             Off = 0,
             Half = 2
         }
 
-        private void ApplySettings()
+        private static int _originalWidth, _originalHeight;
+        private static vSyncList _originalVsync = vSyncList.Default;
+        private static DisplayModeList _originalDisplayMode = DisplayModeList.Default;
+
+        private static void ApplySettings()
         {
-            if (Width.Value < 800) Width.Value = 800;
-            if (Height.Value < 600) Height.Value = 600;
+            if (_originalWidth <= 0)
+                _originalWidth = Screen.width;
+            if (_originalHeight <= 0)
+                _originalHeight = Screen.height;
+            if (_originalVsync == vSyncList.Default)
+                _originalVsync = (vSyncList)QualitySettings.vSyncCount;
+            if (_originalDisplayMode == DisplayModeList.Default)
+                _originalDisplayMode = (Screen.fullScreenMode == FullScreenMode.ExclusiveFullScreen) ? DisplayModeList.FullScreen :
+                                       (Screen.fullScreenMode == FullScreenMode.Windowed) ? DisplayModeList.Windowed :
+                                       (Screen.fullScreenMode == FullScreenMode.FullScreenWindow) ? DisplayModeList.Borderless_FullScreen :
+                                       DisplayModeList.Windowed;
 
-            if (DisplayMode.Value == DisplayModeList.FullScreen)
-                Screen.SetResolution(Width.Value, Height.Value, FullScreenMode.ExclusiveFullScreen);
+            var width = Width.Value;
+            if (width <= 0) width = _originalWidth;
+            else if (width < 800) width = Width.Value = 800;
 
-            if (DisplayMode.Value == DisplayModeList.Windowed)
-                Screen.SetResolution(Width.Value, Height.Value, FullScreenMode.Windowed);
+            var height = Height.Value;
+            if (height <= 0) height = _originalHeight;
+            else if (height < 600) height = Height.Value = 600;
 
-            if (DisplayMode.Value == DisplayModeList.Borderless_FullScreen)
-                Screen.SetResolution(Width.Value, Height.Value, FullScreenMode.FullScreenWindow);
+            var displayMode = DisplayMode.Value;
+            if (displayMode == DisplayModeList.Default)
+                displayMode = _originalDisplayMode;
 
-            QualitySettings.vSyncCount = (int)vSync.Value;
-            Application.targetFrameRate = Framerate.Value;
+            if (displayMode == DisplayModeList.FullScreen)
+                Screen.SetResolution(width, height, FullScreenMode.ExclusiveFullScreen);
+            else if (displayMode == DisplayModeList.Windowed)
+                Screen.SetResolution(width, height, FullScreenMode.Windowed);
+            else if (displayMode == DisplayModeList.Borderless_FullScreen)
+                Screen.SetResolution(width, height, FullScreenMode.FullScreenWindow);
+
+            if (vSync.Value == vSyncList.Default)
+                QualitySettings.vSyncCount = (int)_originalVsync;
+            else
+                QualitySettings.vSyncCount = (int)vSync.Value;
+
+            if (QualitySettings.vSyncCount == 0)
+                Application.targetFrameRate = Framerate.Value;
         }
     }
 }
