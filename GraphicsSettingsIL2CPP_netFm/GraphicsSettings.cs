@@ -16,7 +16,7 @@ namespace BepInEx
     {
         internal const string GUID = "BepInEx.GraphicsSettingsIL2CPP_net6";
         internal const string PluginName = "Graphics Settings";
-        internal const string PluginVersion = "0.7";
+        internal const string PluginVersion = "0.8";
 
         private static ConfigEntry<int> Width;
         private static ConfigEntry<int> Height;
