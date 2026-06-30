@@ -9,7 +9,7 @@ namespace BepInEx
     {
         public const string GUID = "ProcessAffinityOverride";
         public const string PatcherName = "Process Affinity Override";
-        public const string PatcherVersion = "1.0";
+        public const string PatcherVersion = "1.0.0.1";
 
         public override void Initialize()
         {

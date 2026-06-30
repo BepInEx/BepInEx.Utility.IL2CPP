@@ -14,7 +14,7 @@ namespace BepInEx
     {
         internal const string GUID = "BepInEx.MuteInBackgroundIL2CPP_net6";
         internal const string PluginName = "Mute In Background";
-        internal const string PluginVersion = "0.7";
+        internal const string PluginVersion = "0.7.0.1";
 
         //Game Object shared between all BepInExUtility plugins
         public GameObject BepInExUtility;

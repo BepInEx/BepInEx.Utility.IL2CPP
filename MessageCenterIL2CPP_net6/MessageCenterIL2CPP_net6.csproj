@@ -6,7 +6,7 @@
     <RootNamespace>BepInEx</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.664" />
+    <PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.785" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Il2Cppmscorlib">

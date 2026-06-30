@@ -8,8 +8,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.680" />
-		<PackageReference Include="BepInEx.Unity.Mono.Preloader" Version="6.0.0-be.680" />
+		<PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.785" />
+		<PackageReference Include="BepInEx.Unity.Mono.Preloader" Version="6.0.0-be.785" />
 	</ItemGroup>
 
 	<Target Name="CopyCustomContent" AfterTargets="AfterBuild">

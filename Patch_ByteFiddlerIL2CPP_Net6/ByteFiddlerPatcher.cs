@@ -15,7 +15,7 @@ namespace BepInEx
     {
         public const string GUID = "ByteFiddler";
         public const string PatcherName = "ByteFiddler";
-        public const string PatcherVersion = "1.0";
+        public const string PatcherVersion = "1.0.0.1";
 
         public override void Initialize()
         {

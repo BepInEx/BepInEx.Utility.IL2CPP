@@ -15,7 +15,7 @@ namespace BepInEx
     {
         internal const string GUID = "BepInEx.EnableFullScreenToggleIL2CPP_net6";
         internal const string PluginName = "Enable Full Screen Toggle";
-        internal const string PluginVersion = "0.7";
+        internal const string PluginVersion = "0.7.1";
 
         //Game Object shared between all BepInExUtility plugins
         public GameObject BepInExUtility;
@@ -45,7 +45,8 @@ namespace BepInEx
 
         internal void Update()
         {
-            if ((Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt)) && (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)))
+            var input = UnityInput.Current;
+            if ((input.GetKey(KeyCode.LeftAlt) || input.GetKey(KeyCode.RightAlt)) && (input.GetKeyDown(KeyCode.Return) || input.GetKeyDown(KeyCode.KeypadEnter)))
                 //This section of code is never reached on Unity builds where full screen can be toggled, it seems
                 //We can safely toggle full screen without risk of it being toggled twice
                 Screen.fullScreen = !Screen.fullScreen;
